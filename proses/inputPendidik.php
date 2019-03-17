@@ -9,13 +9,21 @@ if(isset($_POST['pendidik'])) {
     $gender=$_POST['gender'];
     $alamat=$_POST['alamat'];
 
-    $sql = "INSERT INTO pendidik (nik,nama,tempat_lahir, tgl_lahir, jekel,alamat) values ('" . $nik . "','" . $nama . "','" . $tmp_lahir . "','" . $tanggal . "','" . $gender . "','" . $alamat . "')";
-    if (mysqli_query($konek, $sql)) {
+    $query_select ="select * from pendidik where nik = '".$nik."'";
+    if (mysqli_query($konek, $query_select)) {
+        $message ="NIK telah ada";
+        header("Location: ../input_pendidik.php?message=" . $message);
+    }else{
+        $sql = "INSERT INTO pendidik (nik,nama,tempat_lahir, tgl_lahir, jekel,alamat) values ('" . $nik . "','" . $nama . "','" . $tmp_lahir . "','" . $tanggal . "','" . $gender . "','" . $alamat . "')";
+        if (mysqli_query($konek, $sql)) {
 
-        header("Location: ../table_pendidik.php");
-    } else {
-        echo mysqli_error($konek);
+            header("Location: ../table_pendidik.php");
+        } else {
+            echo mysqli_error($konek);
+        }
+        $konek->close();
     }
-    $konek->close();
+    
+
 }
 ?>
