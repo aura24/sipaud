@@ -14,11 +14,12 @@
             </li>
             <li><a><i class="fa fa-edit"></i> Data Master<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="table_pendidik.php">Pendidik</a></li>
-                    <li><a href="input_peserta.html">Peserta Didik</a></li>
+                    <li><a href="pendidik_table.php">Pendidik</a></li>
+                    <li><a href="peserta_didik_table.php">Peserta Didik</a></li>
                     <li><a href="input_rombel.html">Rombongan Belajar</a></li>
-                    <li><a href="input_indikator.html">Indikator</a></li>
-                    <li><a href="input_indikator_tpp.html">Indikator TPP</a></li>
+                    <li><a href="indikator_table.php">Indikator</a></li>
+                    <li><a href="indikator_tpp_table.php">Indikator TPP</a></li>
+                    <li><a href="tema_table.php">Tema</a></li>
                 </ul>
             </li>
             <li><a><i class="fa fa-book"></i> Penilaian<span class="fa fa-chevron-down"></span></a>
