@@ -96,7 +96,7 @@
                                     <td><?php echo $data->tanggal ?></td>
                                     <td><?php echo $data->tema ?></td>
                                     <td><?php echo $data->sub_tema ?></td>
-                                    <td><a class="btn btn-primary btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a> </td>
+                                    <td><a class="btn btn-primary btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_detail_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a> </td>
                                 </tr>
 
 
