@@ -21,10 +21,25 @@
                         <div class="clearfix"></div>
                     </div>
                     
-                    <!-- input text atau dropdown -->
-
-                    <a class="btn btn-primary pull-right" href="peserta_rombel.php"><li class="fa fa-user-plus"></li> Tambah </a>
-
+                    <!-- input text atau dropdown -->       
+                    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pesertaRombelProses.php" method="POST">
+                      <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel;  ?>">
+                      <div class="col-md-5 form-group has-feedback">
+                        <label class="control-label col-md-4 col-sm-3 col-xs-12" for="id_peserta_rombel">Kode <span class="required"></span>
+                        </label>
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <input type="text" id="id_peserta_rombel" name="id_peserta_rombel" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <div class="col-md-6 form-group has-feedback">
+                        <label class="control-label col-md-4 col-sm-3 col-xs-12" for="no_induk_peserta_didik">No Induk Peserta Didik <span class="required"></span>
+                        </label>
+                        <div class="col-md-4 col-sm-6 col-xs-12">
+                            <input type="text" id="no_induk_peserta_didik" name="no_induk_peserta_didik" required="required" class="form-control col-md-7 col-xs-12">
+                        </div>
+                      </div>
+                      <input type="submit" class="btn btn-primary" name="peserta_rombel_add" value="Tambah">
+                      
                     <!-- batasi rombel peserta didik -->
 
                 </div>

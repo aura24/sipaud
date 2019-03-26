@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "connect_db.php" ?>
-<?php include "layout/head.php" ?>
+<?php include "connect_db.php";
+      include "layout/head.php" ?>
 
 <body class="nav-md">
 <div class="container body">
@@ -14,7 +14,7 @@
         <?php include "layout/top_navigation.php" ?>
         <!-- page content -->
         <div class="right_col" role="main">
-            <a class="btn btn-primary pull-right" href="input_peserta.php"><li class="fa fa-user-plus"></li> Tambah Peserta Didik</a>
+            <a class="btn btn-primary pull-right" href="peserta_didik_input.php"><li class="fa fa-user-plus"></li> Peserta Didik</a>
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
@@ -32,10 +32,14 @@
                         <table class="table table-hover">
                             <thead>
                                 <th>No Induk</th>
-                                <th>Nama</th>
+                                <th>Nama Lengkap</th>
+                                <th>Nama Panggilan</th>
+                                <th>Tanggal Daftar</th>
                                 <th>Tempat Lahir</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
+                                <th>Alamat</th>
+                                <th>Agama</th>
                                 <th>Aksi</th>
                             </thead>
                             <tbody>
@@ -44,6 +48,8 @@
                             <tr>
                                 <td><?php echo $subjek->no_induk ?></td>
                                 <td><?php echo $subjek->nama_lengkap ?></td>
+                                <td><?php echo $subjek->nama_panggilan ?></td>
+                                <td><?php echo $subjek->tgl_daftar ?></td>
                                 <td><?php echo $subjek->tempat_lahir ?></td>
                                 <td><?php echo $subjek->tgl_lahir ?></td>
                                 <td><?php
@@ -53,10 +59,14 @@
                                         echo "Perempuan";
                                     }
                                   ?></td>
-                                <td>
-                                    <a href="view_rombel.php" class="btn btn-primary btn-xs"><i class="fa fa-folder"></i> View </a>
-                                    <a href="edit_rombel.php" class="btn btn-info btn-xs"><i class="fa fa-pencil"></i> Edit </a>
-                                    <a href="detail_rombel.php" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete </a></td></td>
+                                <td><?php echo $subjek->alamat?></td>
+                                <td><?php echo $subjek->agama?></td>
+                                <td>  <form action="proses/pesertaDidikProses.php" method="GET">
+                                        <a href="peserta_didik_edit.php?no_induk=<?php  echo $subjek->no_induk; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> </a>
+                                           <input hidden name="no_induk" value="<?php echo $subjek->no_induk;  ?>">
+                                           <button href="" class="btn btn-danger" name="peserta_didik_delete" onclick="return confirm('Apakah kamu yakin menghapus peserta didik ini')"> <i class="glyphicon glyphicon-trash"></i>
+                                       </form>
+                                </td>
                             </tr>
                             <?php } ?>
                             </tbody>
