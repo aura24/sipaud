@@ -76,8 +76,7 @@
                             <?php } ?>
                             </tbody>
                         </table>
-                        <td><a class="btn btn-default" href="penilaian_show_detail.php?id=<?php echo $_GET['id'] ?>">Kembali</a> </td>
-
+                      
 
                     </div>
                 </div>
