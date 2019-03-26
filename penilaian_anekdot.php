@@ -52,6 +52,7 @@
                                 <th >Waktu</th>
                                 <th >Tempat</th>
                                 <th >Peristiwa</th>
+                                <th >Indikator yang muncul</th>
                             </thead>
                             <tbody>
                          <?php
@@ -60,6 +61,16 @@
                                     <td><?php echo $subjek->waktu ?></td>
                                     <td><?php echo $subjek->tempat ?></td>
                                     <td><?php echo $subjek->peristiwa ?></td>
+                                    <td><ul>
+                                            <?php
+                                            $sqlIndikator = "Select indikator_tpp.nama as indikator From indikator_yg_muncul JOIN indikator_tpp ON indikator_tpp.kode_tpp = indikator_yg_muncul.kode_tpp where kode_anekdot = ".$subjek->kode_anekdot;
+                                            $indiMuncul = mysqli_query($konek, $sqlIndikator);
+                                            while($indikator = mysqli_fetch_object($indiMuncul)){?>
+                                            <li><?php echo $indikator->indikator ?></li>
+
+                                            <?php } ?>
+                                        </ul>
+                                    </td>
                                 </tr>
 
                             <?php } ?>
