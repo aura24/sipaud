@@ -24,20 +24,10 @@
             </li>
             <li><a><i class="fa fa-book"></i> Penilaian<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
-                    <li><a href="penilaian.php">Harian</a></li>
+                    <li><a href="penilaian_index.php">Harian</a></li>
                     <li><a href="catatan_anekdot.html">Catatan Anekdot</a></li>
                 </ul>
         </ul>
     </div>
-<!--    <div class="menu_section">-->
-<!--        <h3>Live On</h3>-->
-<!--        <ul class="nav side-menu">-->
-<!--            <li><a><i class="fa fa-bug"></i> Daftar Inovasi <span class="fa fa-chevron-down"></span></a>-->
-<!--                <ul class="nav child_menu">-->
-<!--                    <li><a href="e_commerce.html">E-commerce</a></li>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-
 </div>
 <!-- /sidebar menu -->
