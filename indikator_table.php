@@ -53,7 +53,7 @@ include "layout/head.php" ?>
                                                 <form action="proses/indikatorProses.php" method="POST">
                                                    <a   class="btn btn-warning" href="indikator_edit.php?id=<?php echo $data->kode_indikator?>"><i class="glyphicon glyphicon-edit"></i> </a>
                                                     <input hidden name="kode_indikator" value="<?php echo $data->kode_indikator;  ?>">
-                                                    <button class="btn btn-danger" name="indikator_delete" onclick="return confirm('Apakah kamu yakin menghapus tema ini? Ini akan menghapus data sub-tema juga.')"> <i class="glyphicon glyphicon-trash"></i></button>
+                                                    <button class="btn btn-danger" name="indikator_delete" onclick="return confirm('Apakah kamu yakin menghapus indikator ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
                                                 </form>
                                             </td>
                                         </tr>

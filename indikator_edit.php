@@ -51,8 +51,8 @@ include "connect_db.php";
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="kode_indikator_awal" value="<?php echo $data->kode_indikator ?>">
-                                    <a type="button" class="btn btn-default" href="indikator_table.php">Kembali</a>
-                                    <input type="submit" class="btn btn-primary"  name="indikator_edit" value="Ubah">
+                                     <a class="btn btn-primary" type="button" href="indikator_table.php">Batal</a>
+                                    <input type="submit" class="btn btn-success"  name="indikator_edit" value="Update">
                                 </div>
                             </div>
 

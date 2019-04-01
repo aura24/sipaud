@@ -25,7 +25,7 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="SELECT *, sub_tema.nama as sub_tema, tema.nama as tema FROM penilaian JOIN sub_tema on sub_tema.id_sub_tema = penilaian.id_sub_tema JOIN tema on sub_tema.tema_id = tema.id_tema where id_penilaian = '".$_GET['id']."'";
-                    $aktivitas = mysqli_query($konek, $query_select);
+                    $aktivitas = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
@@ -33,7 +33,7 @@ include "connect_db.php";
 
 
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/penilaianProses.php" method="POST">
-                            <?php while($data = mysqli_fetch_object($aktivitas)){?>
+                            <?php while($data = pg_fetch_object($aktivitas)){?>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_penilaian">Kode <span class="required">*</span>
                                     </label>
@@ -82,4 +82,3 @@ include "connect_db.php";
 
 </body>
 </html>
-

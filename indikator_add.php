@@ -26,8 +26,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                <input type="submit" class="btn btn-primary"  name="indikator_add" value="Simpan">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
+                <input type="submit" class="btn btn-success"  name="indikator_add" value="Submit">
             </div>
             </form>
         </div>

@@ -1,6 +1,5 @@
 <div class="navbar nav_title" style="border: 0;">
-
-    <a href="../index.php" class="site_title"><i class="fa fa-paw"></i> <span>SI - PAUD</span></a>
+    <a href="index.php" class="site_title"><i class="fa fa-paw"></i> <span>SI - PAUD</span></a>
 </div>
 
 <div class="clearfix"></div>
@@ -11,7 +10,7 @@
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a href="../index.php"><i class="fa fa-home"></i> Dashboard</span></a>
+            <li><a href="index.php"><i class="fa fa-home"></i> Dashboard</span></a>
             </li>
             <li><a><i class="fa fa-edit"></i> Data Master<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
@@ -36,3 +35,4 @@
         </ul>
     </div>
 </div>
+<!-- /sidebar menu -->

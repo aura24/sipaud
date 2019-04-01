@@ -2,11 +2,11 @@
 include "../connect_db.php";
 
 if(isset($_POST['detail_rombel_add'])) {
-    $sql = "INSERT INTO detail_rombel (id_detail_rombel,tahun_ajaran,semester,id_rombel,pendidik_nik,usia) values ('" . $_POST['id_detail_rombel'] . "','" . $_POST['tahun_ajaran'] . "','" . $_POST['semester'] . "','" . $_POST['namar'] . "','" . $_POST['pendidik_nik'] . "','" . $_POST['usia'] . "')";
+    $sql = "INSERT INTO detail_rombel (id_detail_rombel,id_tahun_ajaran,semester,id_rombel,pendidik_nik,usia) values ('" . $_POST['id_detail_rombel'] . "','" . $_POST['tahun_ajaran'] . "','" . $_POST['semester'] . "','" . $_POST['namar'] . "','" . $_POST['pendidik_nik'] . "','" . $_POST['usia'] . "')";
     runQuery($konek, $sql);
 }
 if(isset($_POST['detail_rombel_edit'])) {
-    $sql = "UPDATE detail_rombel SET id_detail_rombel = '".$_POST['id_detail_rombel']."' ,tahun_ajaran = '".$_POST['tahun_ajaran']."',semester = '".$_POST['semester']."',id_rombel = '".$_POST['namar']."',pendidik_nik = '".$_POST['pendidik_nik']."',usia = '".$_POST['usia']."' where id_detail_rombel='".$_POST['id_detail_rombel_awal']."'";
+    $sql = "UPDATE detail_rombel SET id_detail_rombel = '".$_POST['id_detail_rombel']."' ,id_tahun_ajaran = '".$_POST['tahun_ajaran']."',semester = '".$_POST['semester']."',id_rombel = '".$_POST['namar']."',pendidik_nik = '".$_POST['pendidik_nik']."',usia = '".$_POST['usia']."' where id_detail_rombel='".$_POST['id_detail_rombel_awal']."'";
     runQuery($konek, $sql);
 }
 if(isset($_POST['detail_rombel_delete'])) {

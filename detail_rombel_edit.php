@@ -24,7 +24,7 @@ include "connect_db.php";
                     </div>
                     <?php
 
-                    $query_select ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel JOIN tahun_ajaran ON detail_rombel.tahun_ajaran=tahun_ajaran.id_tahun_ajaran JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik WHERE id_detail_rombel='".$_GET['id']."'";
+                    $query_select ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel JOIN tahun_ajaran ON detail_rombel.id_tahun_ajaran=tahun_ajaran.id_tahun_ajaran JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik WHERE id_detail_rombel='".$_GET['id']."'";
                     $detail_rombel = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">

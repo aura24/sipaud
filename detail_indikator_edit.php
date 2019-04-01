@@ -25,7 +25,7 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="select * from indikator where kode_indikator = '".$_GET['id']."'";
-                    $indikator = mysqli_query($konek, $query_select);
+                    $indikator = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
@@ -33,7 +33,7 @@ include "connect_db.php";
 
 
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/indikatorProses.php" method="POST">
-                            <?php while($data = mysqli_fetch_object($indikator)){?>
+                            <?php while($data = pg_fetch_object($indikator)){?>
                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kode_indikator">Kode Indikator <span class="required">*</span>
                                     </label>

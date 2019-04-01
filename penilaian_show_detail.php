@@ -71,12 +71,50 @@
                             while($data = pg_fetch_object($indikator)){?>
                                 <tr>
                                     <td><?php echo $n++ ?></td>
-                                   <td><?php echo $data->nama ?></td>
+                                    <td><?php echo $data->nama ?></td>
+                                    <td>
+                                        <form action="proses/penilaianProses.php" method="POST">
+                                            <input hidden name="id_penilaian" value="<?php echo $data->id_penilaian;  ?>">
+                                            <input hidden name="kode_indikator" value="<?php echo $data->kode_indikator;  ?>">
+                                            <button class="btn btn-danger btn-xs" name="detail_indikator_delete"> <i class="glyphicon glyphicon-trash"></i></button>
+                                        </form>
+                                    </td>
+
                                 </tr>
 
                             <?php } ?>
                             </tbody>
                         </table>
+                      <div class="panel">
+                        <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          <h4 class="panel-title text-center"><li class="fa fa-user-plus"> Tambah Indikator</h4></li>
+                        </a>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                          <div class="panel-body">
+                            <?php
+                            $query1 ="SELECT * FROM indikator";
+                            $indikator1 = pg_query($konek, $query1);
+                            ?>
+
+                            <form action="proses/penilaianProses.php" method="POST">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <!-- <label for="no_induk_peserta_didik">Indikator :</label> -->
+                                        <select name="kode_indikator" class="form-control">
+                                        <?php while($data = pg_fetch_object($indikator1)){?>
+                                            <option value="<?php echo $data->kode_indikator?>"><?php echo $data->nama ?></  option>
+                                        <?php }?>
+                                        </select>
+                                    </div>
+                                    <input hidden name="id_penilaian" value="<?php echo $_GET['id'] ?>">
+                                    <div class="col-md-2">
+                                        <input type="submit" class="btn btn-primary" class="fa-user-plus" name="detail_indikator_add" value="+">
+                                    </div>
+                                </div>
+                            </form>                     
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -88,13 +126,13 @@
                         <table class="table table-bordered">
                             <thead>
                              <tr>
-                                <th rowspan="2">N0 Induk</th>
+                                <th rowspan="2">No Induk</th>
                                 <th rowspan="2">Nama</th>
-                                <th colspan="6" class="text-center">Penilaian </th>
+                                <th colspan="6" class="text-center">Aspek Pengembangan dan Pencapaian Anak </th>
                                  <th rowspan="2" class="text-center">Catatan Anekdot </th>
                              </tr>
                                 <tr>
-                                    <td>Agama Moral</td>
+                                    <td>Agama dan Moral</td>
                                     <td>Fisik Motorik</td>
                                     <td>Kognitif</td>
                                     <td>Bahasa</td>
@@ -103,8 +141,9 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            
                             <?php
-                            $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = ".$_GET['id'];
+                            $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = '".$_GET['id']."'";
                             $peserta = pg_query($konek, $queryPR);
                                 while($subjek = pg_fetch_object($peserta)){?>
                                     <tr>

@@ -22,7 +22,6 @@
                     <table class="table table-bordered">
                         <thead>
                             <th>Kode</th>
-                            <th>No</th>
                             <th>Nama Rombel</th>
                             <th>Tahun Ajaran</th>
                             <th>Semester</th>
@@ -34,11 +33,7 @@
 
 
                         <?php
-                        $query ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel 
-                                  JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel 
-                                  JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik 
-                                  JOIN tahun_ajaran on detail_rombel.tahun_ajaran = tahun_ajaran.id_tahun_ajaran
-                                  WHERE semester = ".$_GET['semester']." AND detail_rombel.tahun_ajaran = ".$_GET['ta'];
+                        $query ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik JOIN tahun_ajaran on detail_rombel.id_tahun_ajaran = tahun_ajaran.id_tahun_ajaran";
                         $detail_rombel = pg_query($konek, $query);
 
                         while($subjek = pg_fetch_object($detail_rombel)){?>

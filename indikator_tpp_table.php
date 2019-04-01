@@ -21,7 +21,6 @@ include "layout/head.php" ?>
                     <div class="title_left">
                         <h3>Indikator TPP</h3>
                         <h4>(Tingkat Pencapaian Perkembangan)</h4>
-
                     </div>
 
                 </div>

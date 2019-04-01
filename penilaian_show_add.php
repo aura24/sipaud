@@ -9,7 +9,7 @@
             </div>
             <?php
                 $query ="SELECT * FROM sub_tema";
-                $sub_tema = mysqli_query($konek, $query);
+                $sub_tema = pg_query($konek, $query);
             ?>
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/penilaianProses.php" method="POST">
             <div class="modal-body">
@@ -32,7 +32,7 @@
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
                         <select name="id_sub_tema" class="form-control">
-                            <?php while($data = mysqli_fetch_object($sub_tema)){?>
+                            <?php while($data = pg_fetch_object($sub_tema)){?>
                                 <option value="<?php echo $data->id_sub_tema?>"><?php echo $data->nama ?></  option>
                             <?php }?>
                         </select>

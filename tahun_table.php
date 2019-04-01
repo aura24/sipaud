@@ -19,7 +19,7 @@ include "layout/head.php" ?>
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3>Tahun Ajaran/</h3>
+                        <h3>Tahun Ajaran</h3>
                     </div>
 
                 </div>
