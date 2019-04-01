@@ -20,7 +20,7 @@
                               JOIN peserta_rombel ON peserta_rombel.id_peserta_rombel = detail_penilaian.id_peserta_rombel
                               JOIN peserta_didik ON peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik
                               where id_detail_penilaian = ".$_GET['id'];
-                    $peserta = mysqli_query($konek, $querydetail);
+                    $peserta = pg_query($konek, $querydetail);
                  ?>
 
                 <div class="col-md-12">
@@ -30,7 +30,7 @@
                         </div>
                         <table class="table table-striped">
                             <?php
-                            while($data = mysqli_fetch_object($peserta)){?>
+                            while($data = pg_fetch_object($peserta)){?>
                                 <tr>
                                     <td width="10%">Nama </td>
                                     <td>: <?php echo $data->peserta_didik ?></td>
@@ -44,7 +44,7 @@
 
                         <?php
                         $queryAnekdot ="SELECT * FROM catatan_anekdot where id_detail_penilaian = ".$_GET['id'];
-                        $anekdot = mysqli_query($konek, $queryAnekdot);
+                        $anekdot = pg_query($konek, $queryAnekdot);
                         ?>
 
                         <table class="table table-bordered">
@@ -56,7 +56,7 @@
                             </thead>
                             <tbody>
                          <?php
-                            while($subjek = mysqli_fetch_object($anekdot)){?>
+                            while($subjek = pg_fetch_object($anekdot)){?>
                                 <tr>
                                     <td><?php echo $subjek->waktu ?></td>
                                     <td><?php echo $subjek->tempat ?></td>
@@ -64,8 +64,8 @@
                                     <td><ul>
                                             <?php
                                             $sqlIndikator = "Select indikator_tpp.nama as indikator From indikator_yg_muncul JOIN indikator_tpp ON indikator_tpp.kode_tpp = indikator_yg_muncul.kode_tpp where kode_anekdot = ".$subjek->kode_anekdot;
-                                            $indiMuncul = mysqli_query($konek, $sqlIndikator);
-                                            while($indikator = mysqli_fetch_object($indiMuncul)){?>
+                                            $indiMuncul = pg_query($konek, $sqlIndikator);
+                                            while($indikator = pg_fetch_object($indiMuncul)){?>
                                             <li><?php echo $indikator->indikator ?></li>
 
                                             <?php } ?>

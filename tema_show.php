@@ -57,8 +57,6 @@ include "connect_db.php";
                                                                         <input hidden name="id_tema" value="<?php echo $sub->tema_id;  ?>">
                                                                         <button class="btn btn-danger" name="subtema_delete" onclick="return confirm('Apakah kamu yakin menghapus sub-tema ini?')"> <i class="glyphicon glyphicon-trash"></i>
                                                                     </form>
-
-
                                                                 </td>
                                                             </tr>
                                                             <div class="modal fade" id="edit-<?php echo  $sub->id_sub_tema ?>">

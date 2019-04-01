@@ -23,13 +23,13 @@
                             <tbody>
                             <?php
                             $query ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik JOIN tahun_ajaran on detail_rombel.tahun_ajaran = tahun_ajaran.id_tahun_ajaran where id_detail_rombel = ".$_GET['id'];
-                            $detail_rombel = mysqli_query($konek, $query);
+                            $detail_rombel = pg_query($konek, $query);
 
                             $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = ".$_GET['id'];
-                            $peserta = mysqli_query($konek, $queryPR);
+                            $peserta = pg_query($konek, $queryPR);
 
 
-                            while($subjek = mysqli_fetch_object($detail_rombel)){?>
+                            while($subjek = pg_fetch_object($detail_rombel)){?>
                                 <tr>
                                     <td>Nama Rombel :</td>
                                     <td><?php echo $subjek->namar ?></td>
@@ -60,7 +60,7 @@
                             </thead>
 
                                 <?php
-                                while($subjek = mysqli_fetch_object($peserta)){?>
+                                while($subjek = pg_fetch_object($peserta)){?>
                             <tr>
                                 <td><?php echo $subjek->no_induk_peserta_didik?></td>
                                 <td><?php echo $subjek->nama_lengkap?></td>
@@ -89,17 +89,15 @@
                             <tbody>
                             <?php
                             $sql_nilai ="SELECT *, sub_tema.nama as sub_tema, tema.nama as tema FROM penilaian JOIN sub_tema on sub_tema.id_sub_tema = penilaian.id_sub_tema JOIN tema on sub_tema.tema_id = tema.id_tema where id_detail_rombel = ".$_GET['id'];
-                            $penilaian = mysqli_query($konek, $sql_nilai);
+                            $penilaian = pg_query($konek, $sql_nilai);
 
-                            while($data = mysqli_fetch_object($penilaian)){ ?>
+                            while($data = pg_fetch_object($penilaian)){ ?>
                                 <tr>
                                     <td><?php echo $data->tanggal ?></td>
                                     <td><?php echo $data->tema ?></td>
                                     <td><?php echo $data->sub_tema ?></td>
                                     <td><a class="btn btn-primary btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a> </td>
                                 </tr>
-
-
                             <?php } ?>
                             </tbody>
                         </table>
