@@ -19,19 +19,31 @@ include "connect_db.php";
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
+<<<<<<< HEAD
                         <h2>Edit Pendidik</h2>
+=======
+                        <h2>Status Inovasi</h2>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         <div class="clearfix"></div>
                     </div>
                     <?php
 
                     $query_select ="select * from pendidik where nik = '".$_GET['nik']."'";
+<<<<<<< HEAD
                     $pendidik = mysqli_query($konek, $query_select);
+=======
+                    $pendidik = pg_query($konek, $query_select);
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pendidikProses.php" method="POST">
+<<<<<<< HEAD
                             <?php while($subjek = mysqli_fetch_object($pendidik)){?>
+=======
+                            <?php while($subjek = pg_fetch_object($pendidik)){?>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NIK <span class="required">*</span>
                                 </label>
@@ -54,6 +66,7 @@ include "connect_db.php";
                                 </div>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">Tanggal Lahir <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
@@ -62,6 +75,16 @@ include "connect_db.php";
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender<span class="required">*</span></label>
+=======
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">TanggaL Lahir <span class="required">*</span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input type="text" id="tgl" name="tanggal" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->tgl_lahir ?>">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div id="gender" class="btn-group" data-toggle="buttons">
                                         <?php if($subjek->jekel == 0) {?>
@@ -78,7 +101,11 @@ include "connect_db.php";
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Alamat <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                     <textarea class="form-control" rows="3" required="required" name="alamat"  value="<?php echo $subjek->alamat ?>"><?php echo $subjek->alamat ?></textarea>
+=======
+                                    <textarea class="form-control" rows="3" required="required" name="alamat"  value="<?php echo $subjek->alamat ?>"> <?php echo $subjek->alamat ?> </textarea>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </div>
                             </div>
 
@@ -86,7 +113,11 @@ include "connect_db.php";
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="nik_awal" value="<?php echo $subjek->nik; ?>">
+<<<<<<< HEAD
                                     <a class="btn btn-primary" type="button" href="pendidik_table.php">Batal</a>
+=======
+                                    <a class="btn btn-primary" type="button" href="pendidik_table.php">Kembali</a>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     <button type="submit" class="btn btn-success" name="pendidik_edit">Submit</button>
                                 </div>
                             </div>

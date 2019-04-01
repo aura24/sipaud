@@ -38,7 +38,11 @@ include "connect_db.php";
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_rombel">Kode Kelompok <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                         <input type="text" id="id_rombel" required="required" class="form-control col-md-7 col-xs-12" name="id_rombel" value="<?php echo $data->id_rombel ?>">
+=======
+                                        <input type="text" id="id_rombel" required="required" class="form-control col-md-7 col-xs-12" name="id_rombel" readonly="readonly"      value="<?php echo $data->id_rombel ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     </div>
                                 </div>
                                 <div class="form-group">

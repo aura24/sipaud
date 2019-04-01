@@ -19,8 +19,12 @@ include "layout/head.php" ?>
             <div class="">
                 <div class="page-title">
                     <div class="title_left">
+<<<<<<< HEAD
                         <h3>Indikator/</h3>
                         <h4>Tujuan Pembelajaran</h4>
+=======
+                        <h3>Indikator</h3>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     </div>
 
                 </div>
@@ -34,8 +38,13 @@ include "layout/head.php" ?>
                             <div class="x_content">
                                 <br />
                                 <?php
+<<<<<<< HEAD
                                 $query ="SELECT * FROM indikator";
                                 $indikator = mysqli_query($konek, $query);
+=======
+                                $query ="SELECT * FROM indikator ORDER BY kode_indikator ASC";
+                                $indikator = pg_query($konek, $query);
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
@@ -45,16 +54,27 @@ include "layout/head.php" ?>
                                     </thead>
                                     <tbody>
                                     <?php
+<<<<<<< HEAD
                                  
                                     while($data = mysqli_fetch_object($indikator)){?>
                                         <tr>
                                             <td><?php echo $data->kode_indikator ?></td>
+=======
+                                    $n=0;
+                                    while($data = pg_fetch_object($indikator)){?>
+                                        <tr>
+                                            <td><?php echo $data->kode_indikator; ?></td>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                             <td><?php echo $data->nama ?></td>
                                             <td>
                                                 <form action="proses/indikatorProses.php" method="POST">
                                                    <a   class="btn btn-warning" href="indikator_edit.php?id=<?php echo $data->kode_indikator?>"><i class="glyphicon glyphicon-edit"></i> </a>
                                                     <input hidden name="kode_indikator" value="<?php echo $data->kode_indikator;  ?>">
+<<<<<<< HEAD
                                                     <button class="btn btn-danger" name="indikator_delete" onclick="return confirm('Apakah kamu yakin menghapus indikator ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
+=======
+                                                    <button class="btn btn-danger" name="indikator_delete" onclick="return confirm('Apakah kamu yakin menghapus tema ini? akan menghapus data sub-tema juga.')"> <i class="glyphicon glyphicon-trash"></i></button>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                                 </form>
                                             </td>
                                         </tr>

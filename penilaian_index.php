@@ -25,7 +25,11 @@
                     ?>
 
 
+<<<<<<< HEAD
                     <form action="proses/penilaianProses.php" method="GET">
+=======
+                    <form action="proses/peniliaianProses.php" method="GET">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="tahun_ajaran">Tahun Ajaran :</label>
@@ -60,4 +64,26 @@
 <?php include "layout/script.php";?>
 
 </body>
+<<<<<<< HEAD
 </html>
+=======
+</html>
+
+<!--<select class="select2_single form-control">-->
+<!--    <option>Pilih Rombel</option>-->
+<!--//    $query ="SELECT id_detail_rombel,rombel.nama as nama FROM detail_rombel JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel";-->
+<!--//    $detail_rombel = mysqli_query($konek, $query);-->
+<!--//-->
+<!--</select>-->
+<!---->
+<!---->
+<!--<select class="select2_single form-control" tabindex="-1">-->
+<!--    <option>Pilih Subtema</option>-->
+<!--    <option value="AK">Alaska</option>-->
+<!--    <option value="HI">Hawaii</option>-->
+<!--    <option value="CA">California</option>-->
+<!--    <option value="NV">Nevada</option>-->
+<!--    <option value="OR">Oregon</option>-->
+<!--</select>-->
+
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40

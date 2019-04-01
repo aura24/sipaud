@@ -25,18 +25,30 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="select * from peserta_didik where no_induk = '".$_GET['no_induk']."'";
+<<<<<<< HEAD
                     $peserta_didik = mysqli_query($konek, $query_select);
+=======
+                    $peserta_didik = pg_query($konek, $query_select);
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pesertaDidikProses.php" method="POST">
+<<<<<<< HEAD
                             <?php while($subjek = mysqli_fetch_object($peserta_didik)){?>
+=======
+                            <?php while($subjek = pg_fetch_object($peserta_didik)){?>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">No Induk <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                     <input type="text" id="first-name" name="nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->no_induk ?>">
+=======
+                                    <input type="text" id="first-name" name="nik" required="required" class="form-control col-md-7 col-xs-12" readonly="readonly" value="<?php echo $subjek->no_induk ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </div>
                             </div>
                             <div class="form-group">
@@ -54,7 +66,11 @@ include "connect_db.php";
                                 </div>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">Tanggal Daftar <span class="required">*</span>
+=======
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">TanggaL Daftar <span class="required">*</span>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="date" id="tgl" name="tanggal_d" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->tgl_daftar?>">
@@ -68,7 +84,11 @@ include "connect_db.php";
                                 </div>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">Tanggal Lahir <span class="required">*</span>
+=======
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">TanggaL Lahir <span class="required">*</span>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="date" id="tgl" name="tanggal_l" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->tgl_lahir ?>">

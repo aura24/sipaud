@@ -24,7 +24,11 @@ include "connect_db.php";
                     </div>
                     <?php
 
+<<<<<<< HEAD
                     $query_select ="SELECT *,rombel.nama as namar,pendidik.nama as namap, tahun_ajaran.tahun_ajaran as ta FROM detail_rombel JOIN tahun_ajaran ON detail_rombel.tahun_ajaran=tahun_ajaran.id_tahun_ajaran JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik WHERE id_detail_rombel='".$_GET['id']."'";
+=======
+                    $query_select ="SELECT *,rombel.nama as namar,pendidik.nama as namap FROM detail_rombel JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik where id_detail_rombel = '".$_GET['id']."'";
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     $detail_rombel = mysqli_query($konek, $query_select);
                     ?>
                     <div class="x_content">
@@ -38,21 +42,33 @@ include "connect_db.php";
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_detail_rombel">Kode <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                         <input type="text" id="id_detail_rombel" required="required" class="form-control col-md-7 col-xs-12" name="id_detail_rombel" value="<?php echo $data->id_detail_rombel ?>">
+=======
+                                        <input type="text" id="id_detail_rombel" required="required" class="form-control col-md-7 col-xs-12" name="id_detail_rombel" readonly="readonly"      value="<?php echo $data->id_detail_rombel ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_rombel">Nama Rombel<span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                         <input type="text" id="id_rombel" name="id_rombel" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->namar ?>">
+=======
+                                        <input type="text" id="id_rombel" name="id_rombel" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->id_rombel ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tahun_ajaran">Tahun Ajaran <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                         <input type="text" id="tahun_ajaran" name="tahun_ajaran" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->ta ?>">
+=======
+                                        <input type="text" id="tahun_ajaran" name="tahun_ajaran" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->tahun_ajaran ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -73,7 +89,11 @@ include "connect_db.php";
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="pendidik_nik">Pendidik <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
                                         <input type="text" id="pendidik_nik" name="pendidik_nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->namap ?>">
+=======
+                                        <input type="text" id="pendidik_nik" name="pendidik_nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->pendidik_nik ?>">
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     </div>
                                 </div>
                             <div class="form-group">

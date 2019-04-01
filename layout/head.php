@@ -4,9 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
     <link rel="icon" href="production/images/favicon.ico" type="image/ico" />
 
     <title>SI-PAUD | </title>
+=======
+    <link rel="icon" href="images/favicon.ico" type="image/ico" />
+
+    <title>Gentelella Alela! | </title>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

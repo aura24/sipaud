@@ -21,7 +21,11 @@
                     </div>
                     <table class="table table-bordered">
                         <thead>
+<<<<<<< HEAD
                             <th>Kode</th>
+=======
+                            <th>No</th>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             <th>Nama Rombel</th>
                             <th>Tahun Ajaran</th>
                             <th>Semester</th>

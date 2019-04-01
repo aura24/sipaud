@@ -17,7 +17,11 @@
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
+<<<<<<< HEAD
                         <h2>Tambah Pendidik</h2>
+=======
+                        <h2>Status Inovasi</h2>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
@@ -47,17 +51,28 @@
                                 </div>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">Tanggal Lahir <span class="required">*</span>
+=======
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tgl">TanggaL Lahir <span class="required">*</span>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <input type="date" id="tgl" name="tanggal" required="required" class="form-control col-md-7 col-xs-12">
                                 </div>
                             </div>
                             <div class="form-group">
+<<<<<<< HEAD
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender<span class="required">*</span></label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                         <input type="radio" name="gender" value="0" required="required"> &nbsp; Laki-Laki &nbsp;
                                         <input type="radio" name="gender" value="1"> Perempuan
+=======
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12">Gender</label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                           <input type="radio" name="gender" value="0"> &nbsp; Laki-Laki &nbsp;
+                                            <input type="radio" name="gender" value="1"> Perempuan
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </div>
                             </div>
                             <div class="form-group">
@@ -71,7 +86,11 @@
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+<<<<<<< HEAD
                                     <a class="btn btn-primary" type="button" href="pendidik_table.php">Batal</a>
+=======
+                                    <a class="btn btn-primary" type="button" href="pendidik_table.php">Kembali</a>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     <button type="submit" class="btn btn-success" name="pendidik">Submit</button>
                                 </div>
                             </div>

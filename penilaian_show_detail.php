@@ -71,6 +71,7 @@
                             while($data = mysqli_fetch_object($indikator)){?>
                                 <tr>
                                     <td><?php echo $n++ ?></td>
+<<<<<<< HEAD
                                     <td><?php echo $data->nama ?></td>
                                     <td>
                                         <form action="proses/penilaianProses.php" method="POST">
@@ -80,11 +81,15 @@
                                         </form>
                                     </td>
 
+=======
+                                   <td><?php echo $data->nama ?></td>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </tr>
 
                             <?php } ?>
                             </tbody>
                         </table>
+<<<<<<< HEAD
                       <div class="panel">
                         <a class="panel-heading collapsed" role="tab" id="headingTwo" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                           <h4 class="panel-title text-center"><li class="fa fa-user-plus"> Tambah Indikator</h4></li>
@@ -115,6 +120,8 @@
                           </div>
                         </div>
                       </div>
+=======
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -126,6 +133,7 @@
                         <table class="table table-bordered">
                             <thead>
                              <tr>
+<<<<<<< HEAD
                                 <th rowspan="2">No Induk</th>
                                 <th rowspan="2">Nama</th>
                                 <th colspan="6" class="text-center">Aspek Pengembangan dan Pencapaian Anak </th>
@@ -133,6 +141,15 @@
                              </tr>
                                 <tr>
                                     <td>Agama dan Moral</td>
+=======
+                                <th rowspan="2">N0 Induk</th>
+                                <th rowspan="2">Nama</th>
+                                <th colspan="6" class="text-center">Penilaian </th>
+                                 <th rowspan="2" class="text-center">Catatan Anekdot </th>
+                             </tr>
+                                <tr>
+                                    <td>Agama Moral</td>
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                     <td>Fisik Motorik</td>
                                     <td>Kognitif</td>
                                     <td>Bahasa</td>
@@ -141,9 +158,14 @@
                                 </tr>
                             </thead>
                             <tbody>
+<<<<<<< HEAD
                             
                             <?php
                             $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = '".$_GET['id']."'";
+=======
+                            <?php
+                            $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = ".$_GET['id'];
+>>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             $peserta = mysqli_query($konek, $queryPR);
                                 while($subjek = mysqli_fetch_object($peserta)){?>
                                     <tr>
