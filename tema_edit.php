@@ -35,7 +35,8 @@ include "connect_db.php";
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kode-name">Kode Tema <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="kode-name" name="id_tema" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->id_tema?>">
+                                    <input type="text" id="kode-name" name="kode" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->id_tema?>">
+                                    <input hidden  name="kode_awal" value="<?php echo $data->id_tema?>">
                                 </div>
                             </div>
 

@@ -48,7 +48,7 @@ include "layout/head.php" ?>
                                 <td>  <form action="proses/temaProses.php" method="GET">
                                         <a href="tema_show.php?id=<?php  echo $data->id_tema; ?>" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i> </a>
                                         <a href="tema_edit.php?id=<?php  echo $data->id_tema; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> </a>
-                                        <input hidden name="id_sub_tema" value="<?php echo $data->id_sub_tema;  ?>">
+                                        <input hidden name="id_tema" value="<?php echo $data->id_tema;  ?>">
                                         <button href="" class="btn btn-danger" name="tema_delete" onclick="return confirm('Apakah kamu yakin menghapus tema ini? penghapusan data akan menghapus data sub-tema juga.')"> <i class="glyphicon glyphicon-trash"></i>
                                        </form>
                                 </td>
