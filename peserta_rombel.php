@@ -92,9 +92,7 @@
                             </tbody>
                         </table>
                       </form>
-                        <!---------------------------Content------------------------------------->
-                        <!---------------------------Content------------------------------------->
-
+                     
                     <a href="detail_rombel_table.php" class="btn btn-default">Kembali</a>
                     </div>
                 </div>

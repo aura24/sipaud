@@ -45,10 +45,10 @@ include "layout/head.php" ?>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    $n=0;
+                                 
                                     while($data = mysqli_fetch_object($indikator)){?>
                                         <tr>
-                                            <td><?php echo $data->kode_indikator; ?></td>
+                                            <td><?php echo $data->kode_indikator ?></td>
                                             <td><?php echo $data->nama ?></td>
                                             <td>
                                                 <form action="proses/indikatorProses.php" method="POST">
