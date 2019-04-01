@@ -25,7 +25,7 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="select * from tahun_ajaran where id_tahun_ajaran = '".$_GET['id']."'";
-                    $tahun = mysqli_query($konek, $query_select);
+                    $tahun = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
@@ -33,7 +33,7 @@ include "connect_db.php";
 
 
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/tahunProses.php" method="POST">
-                            <?php while($data = mysqli_fetch_object($tahun)){?>
+                            <?php while($data = pg_fetch_object($tahun)){?>
                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_tahun_ajaran">Kode <span class="required">*</span>
                                     </label>

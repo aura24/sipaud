@@ -19,21 +19,13 @@ include "connect_db.php";
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
-<<<<<<< HEAD
                         <h2>Edit Indikator</h2>
-=======
-                        <h2>Status Inovasi</h2>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         <div class="clearfix"></div>
                     </div>
                     <?php
 
                     $query_select ="select * from indikator where kode_indikator = '".$_GET['id']."'";
-<<<<<<< HEAD
-                    $indikator = mysqli_query($konek, $query_select);
-=======
                     $indikator = pg_query($konek, $query_select);
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
@@ -41,11 +33,7 @@ include "connect_db.php";
 
 
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/indikatorProses.php" method="POST">
-<<<<<<< HEAD
-                            <?php while($data = mysqli_fetch_object($indikator)){?>
-=======
                             <?php while($data = pg_fetch_object($indikator)){?>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kode_indikator">Kode Indikator <span class="required">*</span>
                                     </label>
@@ -63,13 +51,8 @@ include "connect_db.php";
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="kode_indikator_awal" value="<?php echo $data->kode_indikator ?>">
-<<<<<<< HEAD
-                                     <a class="btn btn-primary" type="button" href="indikator_table.php">Batal</a>
-                                    <input type="submit" class="btn btn-success"  name="indikator_edit" value="Update">
-=======
                                     <a type="button" class="btn btn-default" href="indikator_table.php">Kembali</a>
                                     <input type="submit" class="btn btn-primary"  name="indikator_edit" value="Ubah">
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </div>
                             </div>
 

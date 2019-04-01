@@ -27,11 +27,7 @@
                         <!---------------------------Content------------------------------------->
                         <?php
                         $query ="SELECT * FROM peserta_didik";
-<<<<<<< HEAD
-                        $peserta_didik = mysqli_query($konek, $query);
-=======
                         $peserta_didik = pg_query($konek, $query);
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         ?>
                         <table class="table table-hover">
                             <thead>
@@ -48,11 +44,7 @@
                             </thead>
                             <tbody>
                             <?php
-<<<<<<< HEAD
-                            while($subjek = mysqli_fetch_object($peserta_didik)){?>
-=======
                             while($subjek = pg_fetch_object($peserta_didik)){?>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             <tr>
                                 <td><?php echo $subjek->no_induk ?></td>
                                 <td><?php echo $subjek->nama_lengkap ?></td>

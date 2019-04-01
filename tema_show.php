@@ -17,21 +17,13 @@ include "connect_db.php";
             <?php
 
             $query_select ="select * from tema where id_tema = '".$_GET['id']."'";
-<<<<<<< HEAD
-            $tema = mysqli_query($konek, $query_select);
-=======
             $tema = pg_query($konek, $query_select);
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
             ?>
 
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
-<<<<<<< HEAD
-                        <?php while($data = mysqli_fetch_object($tema)){
-=======
                         <?php while($data = pg_fetch_object($tema)){
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             echo "<h1>". $data->nama. "</h1>";
                         }
                         $n=0;
@@ -53,13 +45,8 @@ include "connect_db.php";
                                                 <table class="table table-bordered">
                                                     <?php
                                                         $query_sub = "Select * FROM sub_tema where tema_id =".$_GET['id'];
-<<<<<<< HEAD
-                                                        $sub_tema =  mysqli_query($konek, $query_sub);
-                                                        while($sub = mysqli_fetch_object($sub_tema)){?>
-=======
                                                         $sub_tema =  pg_query($konek, $query_sub);
                                                         while($sub = pg_fetch_object($sub_tema)){?>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                                             <tr>
                                                                 <td width="8%"><?php echo ++$n; ?></td>
                                                                 <td><?php echo $sub->nama ?></td>
@@ -70,8 +57,6 @@ include "connect_db.php";
                                                                         <input hidden name="id_tema" value="<?php echo $sub->tema_id;  ?>">
                                                                         <button class="btn btn-danger" name="subtema_delete" onclick="return confirm('Apakah kamu yakin menghapus sub-tema ini?')"> <i class="glyphicon glyphicon-trash"></i>
                                                                     </form>
-
-
                                                                 </td>
                                                             </tr>
                                                             <div class="modal fade" id="edit-<?php echo  $sub->id_sub_tema ?>">
@@ -96,11 +81,8 @@ include "connect_db.php";
                                                                                     </label>
                                                                                     <input class="form-control" name="nama" value="<?php echo $sub->nama ?>">
                                                                                 </div>
-<<<<<<< HEAD
-                                                                                <input hidden name="id_tema" value="<?php echo $_GET['id'] ?>">
-=======
+<!--                                                                                <input hidden name="id_tema" value="--><?php //echo $_GET['id'] ?><!--">-->
                                                                                 <input hidden name="tema_id" value="<?php echo $_GET['id'] ?>">
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                                                                 <input hidden name="id_sub_tema_awal" value="<?php echo $sub->id_sub_tema ?>">
                                                                             </div>
                                                                             <!-- Modal footer -->

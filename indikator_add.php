@@ -5,11 +5,7 @@
             <!-- Modal Header -->
             <div class="modal-header">
                 <h4 class="modal-title">Tambah Indikator</h4>
-<<<<<<< HEAD
-                <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-=======
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
             </div>
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/indikatorProses.php" method="POST">
 
@@ -30,13 +26,8 @@
                 </div>
             </div>
             <div class="modal-footer">
-<<<<<<< HEAD
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                <input type="submit" class="btn btn-success"  name="indikator_add" value="Submit">
-=======
                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                 <input type="submit" class="btn btn-primary"  name="indikator_add" value="Simpan">
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
             </div>
             </form>
         </div>

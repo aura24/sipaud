@@ -34,7 +34,7 @@ include "layout/head.php" ?>
                                 <br />
                                 <?php
                                 $query ="SELECT * FROM tahun_ajaran";
-                                $tahun = mysqli_query($konek, $query);
+                                $tahun = pg_query($konek, $query);
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
@@ -44,7 +44,7 @@ include "layout/head.php" ?>
                                     </thead>
                                     <tbody>
                                     <?php
-                                    while($data = mysqli_fetch_object($tahun)){?>
+                                    while($data = pg_fetch_object($tahun)){?>
                                         <tr>
                                             <td><?php echo $data->id_tahun_ajaran; ?></td>
                                             <td><?php echo $data->tahun_ajaran ?></td>

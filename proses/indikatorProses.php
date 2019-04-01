@@ -4,45 +4,18 @@ include "../connect_db.php";
 
 if(isset($_POST['indikator_add'])) {
     $sql = "INSERT INTO indikator (kode_indikator,nama) values ('" . $_POST['kode_indikator'] . "','" . $_POST['nama'] . "')";
-<<<<<<< HEAD
-    if (mysqli_query($konek, $sql)) {
-        header("Location: ../indikator_table.php");
-    } else {
-        header("Location: ../indikator_table.php");
-    }
-    $konek->close();
-=======
     runQuery($konek, $sql);
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
 
 }
 
 if(isset($_POST['indikator_edit'])) {
     $sql = "UPDATE indikator SET kode_indikator = '".$_POST['kode_indikator']."' ,nama = '".$_POST['nama']."' where kode_indikator='".$_POST['kode_indikator_awal']."'";
-<<<<<<< HEAD
-    if (mysqli_query($konek, $sql)) {
-        header("Location: ../indikator_table.php");
-    } else {
-        header("Location: ../indikator_table.php");
-    }
-    $konek->close();
-=======
     runQuery($konek, $sql);
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
 }
 
 
 if(isset($_POST['indikator_delete'])) {
     $sql ="delete from indikator where kode_indikator ='".$_POST['kode_indikator']."'";
-<<<<<<< HEAD
-    if (mysqli_query($konek, $sql)) {
-        header("Location: ../indikator_table.php");
-    } else {
-        echo mysqli_error($konek);
-    }
-}
-?>
-=======
     if (pg_query($konek, $sql)) {
         header("Location: ../indikator_table.php");
     } else {
@@ -70,4 +43,3 @@ function runQuery($konek,$sql){
         }
     }
 }
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
