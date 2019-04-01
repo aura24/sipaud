@@ -1,9 +1,8 @@
 <?php
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "paud";
-$konek = mysqli_connect($host,$user,$pass,$db);
-session_start();
+try {
+    $konek= pg_connect("host=localhost user=postgres dbname=paud password=admin");
+} Catch (Exception $e) {
+    Echo $e->getMessage();
+}
 ?>
 

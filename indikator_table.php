@@ -33,8 +33,8 @@ include "layout/head.php" ?>
                             <div class="x_content">
                                 <br />
                                 <?php
-                                $query ="SELECT * FROM indikator";
-                                $indikator = mysqli_query($konek, $query);
+                                $query ="SELECT * FROM indikator ORDER BY kode_indikator ASC";
+                                $indikator = pg_query($konek, $query);
                                 ?>
                                 <table class="table table-hover">
                                     <thead>
@@ -45,7 +45,7 @@ include "layout/head.php" ?>
                                     <tbody>
                                     <?php
                                     $n=0;
-                                    while($data = mysqli_fetch_object($indikator)){?>
+                                    while($data = pg_fetch_object($indikator)){?>
                                         <tr>
                                             <td><?php echo $data->kode_indikator; ?></td>
                                             <td><?php echo $data->nama ?></td>

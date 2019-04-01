@@ -25,13 +25,13 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="select * from pendidik where nik = '".$_GET['nik']."'";
-                    $pendidik = mysqli_query($konek, $query_select);
+                    $pendidik = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pendidikProses.php" method="POST">
-                            <?php while($subjek = mysqli_fetch_object($pendidik)){?>
+                            <?php while($subjek = pg_fetch_object($pendidik)){?>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NIK <span class="required">*</span>
                                 </label>

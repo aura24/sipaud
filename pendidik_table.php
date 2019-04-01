@@ -28,7 +28,7 @@ include "layout/head.php" ?>
                         <!---------------------------Content------------------------------------->
                         <?php
                         $query ="SELECT * FROM pendidik";
-                        $data_pendidik = mysqli_query($konek, $query);
+                        $data_pendidik = pg_query($konek, $query);
                         ?>
                         <table class="table table-hover">
                             <thead>
@@ -43,7 +43,7 @@ include "layout/head.php" ?>
                             <tbody>
                             <?php
                             $n=0;
-                            while($subjek = mysqli_fetch_object($data_pendidik)){?>
+                            while($subjek = pg_fetch_object ($data_pendidik)){?>
                             <tr>
                                 <td><?php echo ++$n; ?></td>
                                 <td><?php echo $subjek->nik ?></td>

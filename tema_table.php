@@ -28,7 +28,7 @@ include "layout/head.php" ?>
                         <!---------------------------Content------------------------------------->
                         <?php
                         $query ="SELECT * FROM tema";
-                        $tema = mysqli_query($konek, $query);
+                        $tema = pg_query($konek, $query);
                         ?>
                         <table class="table table-hover">
                             <thead>
@@ -39,14 +39,14 @@ include "layout/head.php" ?>
                             <tbody>
                             <?php
                             $n=0;
-                            while($data = mysqli_fetch_object($tema)){?>
+                            while($data = pg_fetch_object($tema)){?>
                             <tr>
                                 <td><?php echo $data->id_tema; ?></td>
                                 <td><?php echo $data->nama ?></td>
                                 <td>  <form action="proses/temaProses.php" method="GET">
                                         <a href="tema_show.php?id=<?php  echo $data->id_tema; ?>" class="btn btn-info"><i class="glyphicon glyphicon-eye-open"></i> </a>
                                         <a href="tema_edit.php?id=<?php  echo $data->id_tema; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> </a>
-                                           <input hidden name="id_sub_tema" value="<?php echo $data->id_sub_tema;  ?>">
+                                           <input hidden name="id_tema" value="<?php echo $data->id_tema;  ?>">
                                            <button href="" class="btn btn-danger" name="tema_delete" onclick="return confirm('Apakah kamu yakin menghapus tema ini? akan menghapus data sub-tema juga.')"> <i class="glyphicon glyphicon-trash"></i>
                                        </form>
                                 </td>

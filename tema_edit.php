@@ -27,10 +27,10 @@ include "connect_db.php";
                         <?php
 
                         $query_select ="select * from tema where id_tema = '".$_GET['id']."'";
-                        $tema = mysqli_query($konek, $query_select);
+                        $tema =pg_query($konek, $query_select);
                         ?>
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/temaProses.php" method="POST">
-                            <?php while($data = mysqli_fetch_object($tema)){?>
+                            <?php while($data = pg_fetch_object($tema)){?>
                             <div class="form-group">
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kode-name">Kode Tema <span class="required">*</span>
                                 </label>

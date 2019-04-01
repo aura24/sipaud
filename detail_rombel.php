@@ -42,9 +42,9 @@
                          
                         <?php
                         $query ="SELECT * FROM rombel";
-                        $rombel = mysqli_query($konek, $query);
+                        $rombel = pg_query($konek, $query);
                 
-                            while($subjek = mysqli_fetch_object($rombel)){?>
+                            while($subjek = pg_fetch_object($rombel)){?>
                             <tr>
                                 <td><?php echo $subjek->id_rombel ?></td>
                                 <td><?php echo $subjek->nama ?></td>
@@ -94,9 +94,9 @@
                          <a class="btn btn-primary pull-right" href="input_detail_rombel.php"><li class="fa fa-user-plus"></li> Tambah Rombel </a>
                         <?php
                         $query ="SELECT *,rombel.nama as namar,pendidik.nama as namap FROM detail_rombel JOIN rombel ON detail_rombel.id_rombel=rombel.id_rombel JOIN pendidik ON detail_rombel.pendidik_nik=pendidik.nik";
-                        $detail_rombel = mysqli_query($konek, $query);
+                        $detail_rombel = pg_query($konek, $query);
                 
-                            while($subjek = mysqli_fetch_object($detail_rombel)){?>
+                            while($subjek = pg_fetch_object($detail_rombel)){?>
                             <tr>
                                 <td><?php echo $subjek->id_detail_rombel ?></td>
                                 <td><?php echo $subjek->namar ?></td>
