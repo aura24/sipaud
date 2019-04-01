@@ -25,7 +25,7 @@ include "connect_db.php";
                     <?php
 
                     $query_select ="select * from indikator_tpp where kode_tpp = '".$_GET['id']."'";
-                    $indikator = mysqli_query($konek, $query_select);
+                    $indikator = pg_query($konek, $query_select);
                     ?>
                     <div class="x_content">
                         <!---------------------------Content------------------------------------->
@@ -33,7 +33,7 @@ include "connect_db.php";
 
 
                         <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/indikatorTppProses.php" method="POST">
-                            <?php while($data = mysqli_fetch_object($indikator)){?>
+                            <?php while($data = pg_fetch_object($indikator)){?>
                                <div class="form-group">
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="kode_tpp">Kode Indikator <span class="required">*</span>
                                     </label>
@@ -51,7 +51,7 @@ include "connect_db.php";
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="kode_tpp_awal" value="<?php echo $data->kode_tpp ?>">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
+                                    <a type="button" class="btn btn-default" href="indikator_tpp_table.php">Kembali</a>
                                     <input type="submit" class="btn btn-primary"  name="indikator_tpp_edit" value="Ubah">
                                 </div>
                             </div>

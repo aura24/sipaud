@@ -27,7 +27,7 @@
                         <!---------------------------Content------------------------------------->
                         <?php
                         $query ="SELECT * FROM peserta_didik";
-                        $peserta_didik = mysqli_query($konek, $query);
+                        $peserta_didik = pg_query($konek, $query);
                         ?>
                         <table class="table table-hover">
                             <thead>
@@ -44,7 +44,7 @@
                             </thead>
                             <tbody>
                             <?php
-                            while($subjek = mysqli_fetch_object($peserta_didik)){?>
+                            while($subjek = pg_fetch_object($peserta_didik)){?>
                             <tr>
                                 <td><?php echo $subjek->no_induk ?></td>
                                 <td><?php echo $subjek->nama_lengkap ?></td>

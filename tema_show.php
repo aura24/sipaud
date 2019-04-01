@@ -17,13 +17,13 @@ include "connect_db.php";
             <?php
 
             $query_select ="select * from tema where id_tema = '".$_GET['id']."'";
-            $tema = mysqli_query($konek, $query_select);
+            $tema = pg_query($konek, $query_select);
             ?>
 
             <div class="row">
                 <div class="x_panel">
                     <div class="x_title">
-                        <?php while($data = mysqli_fetch_object($tema)){
+                        <?php while($data = pg_fetch_object($tema)){
                             echo "<h1>". $data->nama. "</h1>";
                         }
                         $n=0;
@@ -45,8 +45,8 @@ include "connect_db.php";
                                                 <table class="table table-bordered">
                                                     <?php
                                                         $query_sub = "Select * FROM sub_tema where tema_id =".$_GET['id'];
-                                                        $sub_tema =  mysqli_query($konek, $query_sub);
-                                                        while($sub = mysqli_fetch_object($sub_tema)){?>
+                                                        $sub_tema =  pg_query($konek, $query_sub);
+                                                        while($sub = pg_fetch_object($sub_tema)){?>
                                                             <tr>
                                                                 <td width="8%"><?php echo ++$n; ?></td>
                                                                 <td><?php echo $sub->nama ?></td>
