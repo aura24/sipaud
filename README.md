@@ -1,11 +1,11 @@
-#AMI TAMBAH
+##AMI TAMBAH
 1. tahun ajaran
 2. peserta rombel
 3. penilaian
 4. indikator penilaian
 5. anekdot tambah
 
-#BELUM/BUG 28 Maret 2017
+##BELUM/BUG 28 Maret 2017
 
 1. navigasi halaman SUDAH
 2. login
@@ -32,7 +32,7 @@
  
    ```SUDAH- (c ud) indikator yang muncul di catatan anekdot (UPDATENYA TIDAK ADA)```
 
-#tambahan Error baru 1 April
+##tambahan Error baru 1 April
 
 ```SUDAH- (  u ) peserta_didik```
 
@@ -44,7 +44,7 @@
 
 ```SUDAH- proses belum ubah ke postgre: anekdot, tahun_ajaran, penilaian, peserta_rombel, rombel, tahun```
 
-#BELUM VERSI dara
+##BELUM VERSI dara
 ```SUDAH -peserta yang tampil harusnya peserta yang tidak termasuk dalam rimbel (peserta rombel)
 ```
 
