@@ -14,9 +14,12 @@
         <?php include "layout/top_navigation.php" ?>
         <!-- page content -->
         <div class="right_col" role="main">
+            <a class="btn btn-default" onclick=" window.history.back();"><li class="fa fa-backward"></li> Kembali</a>
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="x_panel">
+
                         <div class="x_title">
                             <h3>Detail Penilaian</h3>
                         </div>

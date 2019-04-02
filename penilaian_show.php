@@ -14,11 +14,13 @@
         <?php include "layout/top_navigation.php" ?>
         <!-- page content -->
         <div class="right_col" role="main">
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="x_panel">
                         <div class="x_title">
                         </div>
+
                         <table class="table table-responsive">
                             <tbody>
                             <?php
