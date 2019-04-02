@@ -182,7 +182,7 @@
                                             <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editPenilaianDetail-<?php echo $subjek->id_detail_penilaian; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                                                     <?php include 'penilaian_show_detail_edit.php'; ?>
                                         </td>
-                                        <td><a class="btn btn-primary btn-xs" href="penilaian_anekdot.php?id=<?php echo $subjek->id_detail_penilaian ?>">Lihat </a></td>
+                                        <td><a class="btn btn-primary btn-xs" href="penilaian_anekdot.php?id_detail_penilaian=<?php echo $subjek->id_detail_penilaian ?>">Lihat </a></td>
 
                                     </tr>
 

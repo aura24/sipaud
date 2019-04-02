@@ -36,7 +36,7 @@ include "connect_db.php";
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">No Induk <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="first-name" name="nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->no_induk ?>">
+                                    <input type="text" id="first-name" name="no_induk" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->no_induk ?>">
                                 </div>
                             </div>
                             <div class="form-group">

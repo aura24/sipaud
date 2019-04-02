@@ -19,7 +19,7 @@
                     $querydetail ="SELECT *, penilaian.tanggal as tanggal, peserta_didik.nama_lengkap as peserta_didik FROM detail_penilaian                              JOIN penilaian ON penilaian.id_penilaian = detail_penilaian.id_penilaian
                               JOIN peserta_rombel ON peserta_rombel.id_peserta_rombel = detail_penilaian.id_peserta_rombel
                               JOIN peserta_didik ON peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik
-                              where id_detail_penilaian = ".$_GET['id'];
+                              where id_detail_penilaian = ".$_GET['id_detail_penilaian'];
                     $peserta = pg_query($konek, $querydetail);
                  ?>
 
@@ -47,7 +47,7 @@
 
 
                         <?php
-                        $queryAnekdot ="SELECT * FROM catatan_anekdot where id_detail_penilaian = ".$_GET['id'];
+                        $queryAnekdot ="SELECT * FROM catatan_anekdot where id_detail_penilaian = ".$_GET['id_detail_penilaian'];
                         $anekdot = pg_query($konek, $queryAnekdot);
                         ?>
 
@@ -61,27 +61,47 @@
                             </thead>
                             <tbody>
                          <?php
-                            while($subjek = pg_fetch_object($anekdot)){?>
+                            while($subjek = pg_fetch_object($anekdot)){
+                                $sqlIndikator = "Select indikator_tpp.nama as indikator, indikator_tpp.kode_tpp as kode_tpp From indikator_yg_muncul JOIN indikator_tpp ON indikator_tpp.kode_tpp = indikator_yg_muncul.kode_tpp where kode_anekdot = '".$subjek->kode_anekdot."'";
+                                $indiMuncul = pg_query($konek, $sqlIndikator);
+                                $n = count($indiMuncul)?>
                                 <tr>
                                     <td><?php echo $subjek->waktu ?></td>
                                     <td><?php echo $subjek->tempat ?></td>
                                     <td><?php echo $subjek->peristiwa ?></td>
-                                    <td><ul>
+                                    <td>
+                                        <a class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addIndiMuncul"><li class="fa fa-plus"></li> </a>
+                                        <?php include 'indikator_muncul_add.php'; ?>
+                                        <table class="table table-striped">
                                             <?php
-                                            $sqlIndikator = "Select indikator_tpp.nama as indikator From indikator_yg_muncul JOIN indikator_tpp ON indikator_tpp.kode_tpp = indikator_yg_muncul.kode_tpp where kode_anekdot = ".$subjek->kode_anekdot;
-                                            $indiMuncul = pg_query($konek, $sqlIndikator);
                                             while($indikator = pg_fetch_object($indiMuncul)){?>
-                                            <li><?php echo $indikator->indikator ?></li>
-
+                                            <tr>
+                                                <td><?php echo $indikator->kode_tpp ?></td>
+                                                <td><?php echo $indikator->indikator ?></td>
+                                                <td>
+                                                    <div class="btn-group">
+                                                        <form action="proses/anekdotProses.php" method="POST">
+                                                            <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian;  ?>">
+                                                            <input hidden name="kode_tpp" value="<?php echo $indikator->kode_tpp ?>" >
+                                                            <input hidden name="kode_anekdot" value="<?php echo $subjek->kode_anekdot?>">
+                                                        <button class="btn btn-danger btn-xs" name="indi_delete"><i class="glyphicon glyphicon-trash"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                            </tr>
                                             <?php } ?>
-                                        </ul>
+                                        </table>
                                     </td>
                                     <td>
+                                        <div class="btn-group">
                                         <form action="proses/anekdotProses.php" method="POST">
-                                            <input hidden name="id_detail_penilaian" value="<?php echo $data->id_detail_penilaian;  ?>">
-                                            <input hidden name="kode_anekdot" value="<?php echo $data->kode_anekdot;  ?>">
+                                            <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian;  ?>">
+                                            <input hidden name="kode_anekdot" value="<?php echo $subjek->kode_anekdot;  ?>">
                                             <button class="btn btn-danger btn-xs" name="anekdot_delete" onclick="return confirm('Apakah kamu yakin menghapus catatan anekdot ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
+                                            <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editAnekdot-<?php echo $subjek->kode_anekdot; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                         </form>
+                                        </div>
+                                          <?php include 'anekdot_edit.php'; ?>
                                     </td>
                                 </tr>
 
