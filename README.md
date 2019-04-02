@@ -18,19 +18,19 @@
 6.  ```filter tahun ajaran & semester dipenilaian_table belum jalan```
 7.  Masih error
 
-  ``` SUDAH- count() peserta didik tidak muncul ```
+ -  ``` SUDAH- count() peserta didik tidak muncul ```
   
-  ``` SUDAH- (  u ) detail_rombel ```
-  
-  ``` SUDAH- (   d) peserta rombel (-)pembatasan tiap peserta```
+  - ``` SUDAH- (  u ) detail_rombel ```
+   
+  -``` SUDAH- (   d) peserta rombel (-)pembatasan tiap peserta```
  
-  ``` SUDAH- (c u ) penilaian/aktivitas```
+  -  ``` SUDAH- (c u ) penilaian/aktivitas```
  
-  ``` SUDAH- (crud) detail_penilaian```
+  -``` SUDAH- (crud) detail_penilaian```
  
-  ``` SUDAH- (  ud) anekdot```
- 
-   ```SUDAH- (c ud) indikator yang muncul di catatan anekdot (UPDATENYA TIDAK ADA)```
+  -  ``` SUDAH- (  ud) anekdot```
+   
+  -```SUDAH- (c ud) indikator yang muncul di catatan anekdot (UPDATENYA TIDAK ADA)```
 
 ##tambahan Error baru 1 April
 
@@ -45,7 +45,9 @@
 ```SUDAH- proses belum ubah ke postgre: anekdot, tahun_ajaran, penilaian, peserta_rombel, rombel, tahun```
 
 ##BELUM VERSI dara
-```SUDAH -peserta yang tampil harusnya peserta yang tidak termasuk dalam rimbel (peserta rombel)
+
+```
+SUDAH -peserta yang tampil harusnya peserta yang tidak termasuk dalam rimbel (peserta rombel)
 ```
 
 -update detail rombel?
