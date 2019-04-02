@@ -25,7 +25,8 @@
                   
                   <div class="x_content">
                   <?php
-                    $query ="SELECT * FROM peserta_didik";
+                    $query ="SELECT * FROM peserta_didik Where no_induk Not IN 
+                              (Select no_induk_peserta_didik FROM peserta_rombel WHERE id_detail_rombel = '".$_GET['id']."')";
                     $no_induk = pg_query($konek, $query);
                   ?>
 
@@ -61,15 +62,16 @@
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                         <?php
-                        $query2 ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = '".$_GET['id']."'";
+                        $query2 ="SELECT * FROM peserta_rombel 
+                                  JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik 
+                                  where id_detail_rombel = '".$_GET['id']."'";
                         $peserta_didik = pg_query($konek, $query2);
                         ?>
                         <h2>Daftar Peserta Rombel</h2> <!-- tampilkan nama rombel!! -->
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">                        
-                      <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pesertaRombelProses.php" method="POST">
-                        <table class="table table-hover">
+                       <table class="table table-hover">
                             <thead>
                                 <th>No</th>
                                 <th>No Induk</th>
@@ -84,20 +86,22 @@
                                 <td><?php echo ++$n; ?></td>
                                 <td><?php echo $subjek->no_induk ?></td>
                                 <td><?php echo $subjek->nama_lengkap ?></td>
-                                <input hidden name="id_peserta_rombel" value="<?php echo $data->id_peserta_rombel;  ?>">
-                                <
-                                <td><button class="btn btn-danger btn-xs" name="peserta_rombel_delete" onclick="return confirm('Apakah kamu yakin menghapus peserta didik ini?')"> <i class="glyphicon glyphicon-trash"></i></button></td>
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/pesertaRombelProses.php" method="POST">
+                                    <input hidden name="id_peserta_rombel" value="<?php echo $subjek->id_peserta_rombel;  ?>">
+                                    <input hidden name="id_detail_rombel" value="<?php echo $subjek->id_detail_rombel;  ?>">
+                                    <td><button class="btn btn-danger btn-xs" name="peserta_rombel_delete" onclick="return confirm('Apakah kamu yakin menghapus peserta didik ini?')"> <i class="glyphicon glyphicon-trash"></i></button></td>
+                                </form>
                             </tr>
                             <?php } ?>
                             </tbody>
                         </table>
-                      </form>
                      
                     <a href="detail_rombel_table.php" class="btn btn-default">Kembali</a>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
         <!-- /page content -->
         <?php include "layout/footer.php" ?>
     </div>

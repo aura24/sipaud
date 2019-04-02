@@ -51,7 +51,20 @@ include "connect_db.php";
                                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_sub_tema">Sub-Tema <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="id_sub_tema" name="id_sub_tema" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $data->sub_tema ?>">
+                                        <select name="id_sub_tema" class="form-control col-md-7 col-xs-12">
+                                            <?php
+                                            $sqlTema = "select * from sub_tema";
+                                            $sub_tema= pg_query($konek, $sqlTema);
+
+                                            while($sub = pg_fetch_object($sub_tema)){
+                                                if($sub->id_sub_tema == $data->id_sub_tema){
+                                                ?>
+                                            <option value="<?php echo $sub->id_sub_tema ?>" selected> <?php echo $sub->nama ?></option>
+                                            <?php }else{?>
+                                            <option value="<?php echo $sub->id_sub_tema ?>"> <?php echo $sub->nama ?></option>
+                                            <?php }
+                                            }?>
+                                        </select>
                                     </div>
                                 </div>
 
@@ -59,8 +72,9 @@ include "connect_db.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="id_penilaian_awal" value="<?php echo $data->id_penilaian ?>">
                                     <!-- button batal -->
-                                    <input hidden name="id_detail_rombel" value="<?php echo $_GET['id'] ?>">
-                                    <input type="submit" class="btn btn-success"  name="penilaian_show_edit" value="Update">
+                                    <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel ?>">
+                                    <a href="penilaian_show.php?id=<?php echo $data->id_detail_rombel ?>" class="btn btn-default">Kembali</a>
+                                    <input type="submit" class="btn btn-success"  name="penilaian_show_edit" value="Ubah">
                                 </div>
                             </div>
 

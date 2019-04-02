@@ -48,7 +48,7 @@
                                 </tr>
                                 <tr>
                                     <td>Jumlah Peserta Didik :</td>
-                                    <td> <label class="label label-info"><?php echo count($peserta)?></label></td>
+                                    <td> <label class="label label-info"><?php echo count($peserta)+1 ?></label></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -98,7 +98,7 @@
                                 <tr>
                                     <td><?php echo $data->tanggal ?></td>
                                     <td><?php echo $data->tema ?></td>
-                                    <td><?php echo $data->sub_tema ?></td>    
+                                    <td><?php echo $data->sub_tema ?></td>
                                     <td>
                                         <form action="proses/penilaianProses.php" method="POST">
                                             <a   class="btn btn-warning btn-xs" href="penilaian_show_edit.php?id=<?php echo $data->id_penilaian?>"><i class="glyphicon glyphicon-edit"></i></a>

@@ -42,13 +42,10 @@
                             <?php } ?>
                         </table>
 
-<<<<<<< HEAD
-                        <!-- <a class="btn btn-primary" href="anekdot_addd.php"><li class="fa fa-user-plus"></li> Catatan Anekdot </a> -->
+                         <a class="btn btn-default" onclick=" window.history.back();"><li class="fa fa-backward"></li> Kembali</a>
                         <a class="btn btn-primary" data-toggle="modal" data-target="#addAnekdot"><li class="fa fa-user-plus"></li> Catatan Anekdot </a>
 
 
-=======
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                         <?php
                         $queryAnekdot ="SELECT * FROM catatan_anekdot where id_detail_penilaian = ".$_GET['id'];
                         $anekdot = pg_query($konek, $queryAnekdot);
@@ -56,18 +53,11 @@
 
                         <table class="table table-bordered">
                             <thead>
-<<<<<<< HEAD
                                 <th>Waktu</th>
                                 <th>Tempat</th>
                                 <th>Peristiwa</th>
                                 <th>Indikator yang muncul</th>
                                 <th>Aksi</th>
-=======
-                                <th >Waktu</th>
-                                <th >Tempat</th>
-                                <th >Peristiwa</th>
-                                <th >Indikator yang muncul</th>
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                             </thead>
                             <tbody>
                          <?php
@@ -86,7 +76,6 @@
                                             <?php } ?>
                                         </ul>
                                     </td>
-<<<<<<< HEAD
                                     <td>
                                         <form action="proses/anekdotProses.php" method="POST">
                                             <input hidden name="id_detail_penilaian" value="<?php echo $data->id_detail_penilaian;  ?>">
@@ -94,8 +83,6 @@
                                             <button class="btn btn-danger btn-xs" name="anekdot_delete" onclick="return confirm('Apakah kamu yakin menghapus catatan anekdot ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
                                         </form>
                                     </td>
-=======
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
                                 </tr>
 
                             <?php } ?>
@@ -108,11 +95,7 @@
             </div>
         </div>
 
-<<<<<<< HEAD
         <?php include "anekdot_add.php"; ?>
-=======
-
->>>>>>> d1e06fa5d180dbfdad410ebb4b6756d947b70b40
         <!-- /page content -->
         <?php include "layout/footer.php" ?>
     </div>

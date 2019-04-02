@@ -30,6 +30,7 @@
                                             JOIN rombel on rombel.id_rombel = detail_rombel.id_rombel 
                                             JOIN pendidik ON pendidik.nik = detail_rombel.pendidik_nik
                                             where id_penilaian = ".$_GET['id'];
+
                             $penilaian = pg_query($konek, $sql_nilai);
                             while($data = pg_fetch_object($penilaian)){?>
                                 <tr>
@@ -52,8 +53,18 @@
                                     <td>Pendidik </td>
                                     <td>: <?php echo $data->pendidik ?></td>
                                 </tr>
+                                <tr>
+                                    <?php
+                                    $sql_peserta = "select * FROM peserta_rombel Where id_detail_rombel = '".$data->id_detail_rombel."'";
+                                    $peserta = pg_query($konek,$sql_peserta);
+                                    ?>
+                                    <td>Jumlah Peserta DIdik</td>
+                                    <td>: <?php echo count($peserta) +1?></td>
+                                </tr>
+                            <?php
 
-                            <?php } ?>
+                                $id_detail_rombel = $data->id_detail_rombel;
+                            } ?>
                             </tbody>
                         </table>
                     </div>
@@ -121,7 +132,10 @@
                     <div class="x_panel">
                         <div class="x_title">
                             <h3>Penilaian Peserta Rombel</h3>
+
                         </div>
+                        <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#addPenilaianDetail"><li class="fa fa-user-plus"></li> Penilaian </a>
+                        <?php include 'penilaian_show_detail_add.php'; ?>
 
                         <table class="table table-bordered">
                             <thead>
@@ -129,6 +143,7 @@
                                 <th rowspan="2">No Induk</th>
                                 <th rowspan="2">Nama</th>
                                 <th colspan="6" class="text-center">Aspek Pengembangan dan Pencapaian Anak </th>
+                                 <th rowspan="2" class="text-center">Aksi </th>
                                  <th rowspan="2" class="text-center">Catatan Anekdot </th>
                              </tr>
                                 <tr>
@@ -143,30 +158,46 @@
                             <tbody>
                             
                             <?php
-                            $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = '".$_GET['id']."'";
+                            $queryPR ="SELECT * FROM detail_penilaian 
+                                        JOIN peserta_rombel ON peserta_rombel.id_peserta_rombel = detail_penilaian.id_peserta_rombel
+                                        JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik 
+                                        where id_detail_rombel = '".$id_detail_rombel."' AND id_penilaian = ".$_GET['id'];
                             $peserta = pg_query($konek, $queryPR);
                                 while($subjek = pg_fetch_object($peserta)){?>
                                     <tr>
                                         <td><?php echo $subjek->no_induk_peserta_didik?></td>
                                         <td><?php echo $subjek->nama_lengkap?></td>
-                                       <?php  $sql_nilai ="SELECT * FROM detail_penilaian where id_penilaian = ".$_GET['id'];
-                                              $nilai_peserta = pg_query($konek, $sql_nilai);
-                                       while($n = pg_fetch_object($nilai_peserta)){?>
-                                        <td><?php echo $n->agama_moral ?></td>
-                                        <td><?php echo $n->fisik_motorik ?></td>
-                                        <td><?php echo $n->kognitif ?></td>
-                                        <td><?php echo $n->bahasa ?></td>
-                                        <td><?php echo $n->sosial_emosional ?></td>
-                                        <td><?php echo $n->seni ?></td>
-                                        <td><a class="btn btn-primary btn-xs" href="penilaian_anekdot.php?id=<?php echo $n->id_detail_penilaian ?>">Lihat </a></td>
-
-                                       <?php } ?>
+                                        <td><?php echo $subjek->agama_moral ?></td>
+                                        <td><?php echo $subjek->fisik_motorik ?></td>
+                                        <td><?php echo $subjek->kognitif ?></td>
+                                        <td><?php echo $subjek->bahasa ?></td>
+                                        <td><?php echo $subjek->sosial_emosional ?></td>
+                                        <td><?php echo $subjek->seni ?></td>
+                                        <td>
+                                            <form method="POST" action="proses/penilaianDetailProses.php">
+                                                <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian?>">
+                                                <input hidden name="id_penilaian" value="<?php echo $_GET['id'] ?>">
+                                                <button type="submit" class="btn btn-danger btn-xs" name="nilai_delete" href="penilaian_anekdot.php?id=<?php echo $n->id_detail_penilaian ?>"><i class="glyphicon glyphicon-trash"></i> </button>
+                                            </form>
+                                            <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editPenilaianDetail-<?php echo $subjek->id_detail_penilaian; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
+                                                                    <?php include 'penilaian_show_detail_edit.php'; ?>
+                                        </td>
+                                        <td><a class="btn btn-primary btn-xs" href="penilaian_anekdot.php?id=<?php echo $subjek->id_detail_penilaian ?>">Lihat </a></td>
 
                                     </tr>
 
                             <?php } ?>
                             </tbody>
                         </table>
+
+                        <div>
+                            <p>Keterangan nilai :</p>
+                            <strong>0</strong> : Belum Berkembang &nbsp;<br>
+                            <strong>1</strong> : Masih Bekembang &nbsp;<br>
+                            <strong>2</strong> : Berkembang Sesuai Harapan &nbsp;<br>
+                            <strong>3</strong> : Berkembang dengan Baik<br>
+                        </div>
+
 
                     </div>
                 </div>
