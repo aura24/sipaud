@@ -10,7 +10,7 @@
 1. navigasi halaman SUDAH
 2. login
 3. dashboard
-4.laporan
+4. laporan
 5.  notifikasi error
    - duplikat data,salah input,berhasil/gagal belum ada
    - klu data int dimasukan varchar, data masuk dan id=0
@@ -47,7 +47,6 @@
     5. searching??
     6. terdapat spasi di awal kolom alamat
     7. Di penilaian tu value optionnya bagus 0-3 atau BB,MB,BSH,BSB?, kalau ganti berarti ubah database
-
     8. Masih error 5 April 2018
        -(    )peserta seharusnya hanya dapat memiliki 1 rombel dalam tahun ajaran dan semester yang sama
        -(  u )Edit detail rombel masih error

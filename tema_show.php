@@ -65,8 +65,7 @@ include "connect_db.php";
 
                                                                         <!-- Modal Header -->
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title"><?php echo $sub->nama?></h4>
-                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                            <h4 class="modal-title">Edit Sub Tema - <?php echo $sub->nama?></h4>
                                                                         </div>
                                                                         <form action="proses/temaProses.php" method="POST">
                                                                             <!-- Modal body -->
