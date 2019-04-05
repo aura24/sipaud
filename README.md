@@ -40,13 +40,15 @@
 
 -------------------------------------------------------------------------------------------------------
 ##05 APRIL 2019 BELUM DIKERJAKAN
-    1. navigasi sepertinya harus diperbaiki, tanya dara
-    2. login?
-    3. dashboard?
-    4. laporan bulanan
-    5. searching??
-    6. terdapat spasi di awal kolom alamat
-    7. Di penilaian tu value optionnya bagus 0-3 atau BB,MB,BSH,BSB?, kalau ganti berarti ubah database
+
+1. navigasi sepertinya harus diperbaiki, tanya dara
+2. login?
+3. dashboard?
+4. laporan bulanan
+5. searching??
+6. terdapat spasi di awal kolom alamat
+7. Di penilaian tu value optionnya bagus 0-3 atau BB,MB,BSH,BSB?, kalau ganti berarti ubah database
+
     8. Masih error 5 April 2018
        -(    )peserta seharusnya hanya dapat memiliki 1 rombel dalam tahun ajaran dan semester yang sama
        -(  u )Edit detail rombel masih error
