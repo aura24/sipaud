@@ -48,14 +48,12 @@
 5. searching??
 6. terdapat spasi di awal kolom alamat
 7. Di penilaian tu value optionnya bagus 0-3 atau BB,MB,BSH,BSB?, kalau ganti berarti ubah database
-
-    8. Masih error 5 April 2018
-       -(    )peserta seharusnya hanya dapat memiliki 1 rombel dalam tahun ajaran dan semester yang sama
-       -(  u )Edit detail rombel masih error
-       -(    )perbaiki halaman untuk tambah indikator_detail di halaman tema_show
-       -count() di halaman penilaian_show, penilaian_show_detail, penilaian_Anekdot Ami masih belum muncul
-
-    CEK DATABASE (sudah)
-       -penilaian_show (aktiifitas) ketika dimasukan subtema dg tanggal yang sama masih bisa, harusnya tidak bisa. 
-       -perbaiki ERD sub tema dengan indikator detail
-       +DB sudah diperbaiki tapi fk id_sub_tema di tabel penilaian masih gagal terbentuk saat ditampilkan ke sql power
+8. Masih error 5 April 2018
+   - ```(    )peserta seharusnya hanya dapat memiliki 1 rombel dalam tahun ajaran dan semester yang sama```
+   - ```(  u )Edit detail rombel masih error```
+   - ```(    )perbaiki halaman untuk tambah indikator_detail di halaman tema_show```
+   - ```count() di halaman penilaian_show, penilaian_show_detail, penilaian_Anekdot Ami masih belum muncul```
+9. CEK DATABASE (sudah)
+   - ```penilaian_show (aktiifitas) ketika dimasukan subtema dg tanggal yang sama masih bisa, harusnya tidak bisa.```
+   - ```perbaiki ERD sub tema dengan indikator detail```
+   - ```DB sudah diperbaiki tapi fk id_sub_tema di tabel penilaian masih gagal terbentuk saat ditampilkan ke sql power```
