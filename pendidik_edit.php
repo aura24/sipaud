@@ -36,7 +36,7 @@ include "connect_db.php";
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">NIK <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="first-name" name="nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->nik ?>">
+                                    <input type="number" id="first-name" name="nik" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->nik ?>">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -87,7 +87,7 @@ include "connect_db.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="nik_awal" value="<?php echo $subjek->nik; ?>">
                                     <a class="btn btn-primary" type="button" href="pendidik_table.php">Batal</a>
-                                    <button type="submit" class="btn btn-success" name="pendidik_edit">Submit</button>
+                                    <button type="submit" class="btn btn-success" name="pendidik_edit">Update</button>
                                 </div>
                             </div>
                             <?php } ?>

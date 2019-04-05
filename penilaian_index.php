@@ -15,6 +15,7 @@
         <!-- page content -->
         <div class="right_col" role="main">
             <div class="row">
+
                 <div class="x_panel">
                     <div class="x_title">
                         <h3>Pilih Tahun Ajaran</h3>
@@ -48,6 +49,7 @@
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>

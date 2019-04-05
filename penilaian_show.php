@@ -14,11 +14,13 @@
         <?php include "layout/top_navigation.php" ?>
         <!-- page content -->
         <div class="right_col" role="main">
+
             <div class="row">
                 <div class="col-md-3">
                     <div class="x_panel">
                         <div class="x_title">
                         </div>
+
                         <table class="table table-responsive">
                             <tbody>
                             <?php
@@ -48,7 +50,7 @@
                                 </tr>
                                 <tr>
                                     <td>Jumlah Peserta Didik :</td>
-                                    <td> <label class="label label-info"><?php echo count($peserta)?></label></td>
+                                    <td> <label class="label label-info"><?php echo count($peserta)+1 ?></label></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -78,9 +80,9 @@
                     <div class="x_panel">
                         <div class="x_title">
                             <h3 class="col-md-10">Daftar Aktivitas Rombel</h3>
-                            <a class="btn btn-primary" data-toggle="modal" data-target="#addPenilaianShow"><li class="fa fa-user-plus"></li> Aktivitas </a>
                             <div class="clearfix"></div>
                         </div>
+                        <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#addPenilaianShow"><li class="fa fa-user-plus"></li> Aktivitas </a>
 
                         <table class="table table-bordered">
                             <thead>
@@ -98,14 +100,15 @@
                                 <tr>
                                     <td><?php echo $data->tanggal ?></td>
                                     <td><?php echo $data->tema ?></td>
-                                    <td><?php echo $data->sub_tema ?></td>    
+                                    <td><?php echo $data->sub_tema ?></td>
                                     <td>
                                         <form action="proses/penilaianProses.php" method="POST">
                                             <a   class="btn btn-warning btn-xs" href="penilaian_show_edit.php?id=<?php echo $data->id_penilaian?>"><i class="glyphicon glyphicon-edit"></i></a>
                                              <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel;  ?>">
                                             <input hidden name="id_penilaian" value="<?php echo $data->id_penilaian;  ?>">
+                                            <input hidden name="id_sub_tema" value="<?php echo $data->id_sub_tema ?>">
                                             <button class="btn btn-danger btn-xs" name="penilaian_show_delete" onclick="return confirm('Apakah kamu yakin menghapus aktivitas ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
-                                            <a class="btn btn-primary btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a>
+                                            <a class="btn btn-info btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a>
                                         </form>
                                     </td>
                                 </tr>

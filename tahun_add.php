@@ -14,7 +14,7 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_tahun_ajaran">Kode <span class="required">*</span>
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                        <input type="text" id="id_tahun_ajaran" required="required" class="form-control col-md-7 col-xs-12" name="id_tahun_ajaran">
+                        <input type="number" id="id_tahun_ajaran" required="required" class="form-control col-md-7 col-xs-12" name="id_tahun_ajaran">
                     </div>
                 </div>
                 <div class="form-group">

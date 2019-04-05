@@ -10,7 +10,7 @@
     <div class="menu_section">
         <h3>General</h3>
         <ul class="nav side-menu">
-            <li><a href="index.php"><i class="fa fa-home"></i> Dashboard</span></a>
+            <li><a href="index.php"><i class="fa fa-home"></i> Dashboard</a>
             </li>
             <li><a><i class="fa fa-edit"></i> Data Master<span class="fa fa-chevron-down"></span></a>
                 <ul class="nav child_menu">
@@ -27,11 +27,7 @@
                     <li><a href="detail_rombel_table.php">Rombongan Belajar</a></li>
                 </ul>
             </li>
-            <li><a><i class="fa fa-book"></i> Penilaian<span class="fa fa-chevron-down"></span></a>
-                <ul class="nav child_menu">
-                    <li><a href="penilaian_index.php">Harian</a></li>
-                    <li><a href="catatan_anekdot.html">Catatan Anekdot</a></li>
-                </ul>
+            <li><a href="penilaian_index.php"><i class="fa fa-book"></i> Penilaian</a>
         </ul>
     </div>
 </div>

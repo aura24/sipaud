@@ -74,7 +74,7 @@ include "connect_db.php";
                                                                                 <div class="form-group">
                                                                                     <label class="control-label" for="id_sub_tema">ID sub Tema <span class="required">*</span>
                                                                                     </label>
-                                                                                    <input class="form-control" name="id_sub_tema" value="<?php echo $sub->id_sub_tema ?>">
+                                                                                    <input type="number" class="form-control" name="id_sub_tema" value="<?php echo $sub->id_sub_tema ?>">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label" for="nama">Nama sub Tema <span class="required">*</span>
