@@ -51,7 +51,7 @@ function runQuery($konek,$sql,$id_detail_penilaian){
             }
             else {
                 if ($state=="23505") { // unique_violation
-                    echo "<script>alert('Kode indikator telah ada!');history.go(-1);</script>";
+                        echo "<script>alert('Kode indikator telah ada!');history.go(-1);</script>";
                 }else{
                     $m = pg_last_error($konek);
 //                    echo $m;
