@@ -6,7 +6,7 @@ if(isset($_POST['detail_rombel_add'])) {
     runQuery($konek, $sql);
 }
 if(isset($_POST['detail_rombel_edit'])) {
-    $sql = "UPDATE detail_rombel SET id_detail_rombel = '".$_POST['id_detail_rombel']."' ,id_tahun_ajaran = '".$_POST['tahun_ajaran']."',semester = '".$_POST['semester']."',id_rombel = '".$_POST['namar']."',pendidik_nik = '".$_POST['pendidik_nik']."',usia = '".$_POST['usia']."' where id_detail_rombel='".$_POST['id_detail_rombel_awal']."'";
+    $sql = "UPDATE detail_rombel SET id_detail_rombel = '".$_POST['id_detail_rombel']."', id_tahun_ajaran = '".$_POST['tahun_ajaran']."', semester = '".$_POST['semester']."', id_rombel = '".$_POST['namar']."',pendidik_nik = '".$_POST['pendidik_nik']."', usia = '".$_POST['usia']."' where id_detail_rombel='".$_POST['id_detail_rombel_awal']."'";
     runQuery($konek, $sql);
 }
 if(isset($_POST['detail_rombel_delete'])) {

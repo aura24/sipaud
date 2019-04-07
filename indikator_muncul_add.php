@@ -1,4 +1,4 @@
-<div class="modal fade" id="addIndiMuncul">
+<div class="modal fade" id="addIndiMuncul-<?php echo $subjek->kode_anekdot; ?>">
     <div class="modal-dialog">
         <div class="modal-content">
 
@@ -6,7 +6,7 @@
             <div class="modal-header">
                 <h4 class="modal-title">Tambah Anekdot</h4>
                 <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
-            </div>
+            </div> 
 
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/anekdotProses.php" method="POST">
                 <div class="modal-body">

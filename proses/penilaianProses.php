@@ -31,9 +31,9 @@ if(isset($_POST['detail_indikator_add'])) {
 }
 
 if(isset($_POST['detail_indikator_delete'])) {
-    $sql ="delete FROM indikator_detail WHERE id_penilaian ='".$_POST['id_penilaian']."' AND kode_indikator ='".$_POST['kode_indikator']."'";
+    $sql ="delete FROM indikator_detail WHERE id_sub_tema ='".$_POST['id_sub_tema']."' AND kode_indikator ='".$_POST['kode_indikator']."'";
     if (pg_query($konek, $sql)) {
-        header("Location: ../penilaian_show_detail.php?id=".$_POST['id_penilaian']);
+        header("Location: ../tema_show.php?id=".$_POST['id_sub_tema']);
     } else {
         echo pg_last_error($konek);
     }

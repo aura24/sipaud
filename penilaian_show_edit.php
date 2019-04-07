@@ -73,8 +73,8 @@ include "connect_db.php";
                                     <input hidden name="id_penilaian_awal" value="<?php echo $data->id_penilaian ?>">
                                     <!-- button batal -->
                                     <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel ?>">
-                                    <a href="penilaian_show.php?id=<?php echo $data->id_detail_rombel ?>" class="btn btn-default">Kembali</a>
-                                    <input type="submit" class="btn btn-success"  name="penilaian_show_edit" value="Ubah">
+                                    <a href="penilaian_show.php?id=<?php echo $data->id_detail_rombel ?>" class="btn btn-primary">Batal</a>
+                                    <input type="submit" class="btn btn-success"  name="penilaian_show_edit" value="Update">
                                 </div>
                             </div>
 

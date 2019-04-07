@@ -36,7 +36,7 @@ include "connect_db.php";
                                 <label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">No Induk <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <input type="text" id="first-name" name="no_induk" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->no_induk ?>">
+                                    <input type="number" id="first-name" name="no_induk" required="required" class="form-control col-md-7 col-xs-12" value="<?php echo $subjek->no_induk ?>">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -108,7 +108,7 @@ include "connect_db.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                                     <input hidden name="no_induk_awal" value="<?php echo $subjek->no_induk; ?>">
                                     <a class="btn btn-primary" type="button" href="peserta_didik_table.php">Batal</a>
-                                    <button type="submit" class="btn btn-success" name="peserta_didik_edit">Submit</button>
+                                    <button type="submit" class="btn btn-success" name="peserta_didik_edit">Update</button>
                                 </div>
                             </div>
                             <?php } ?>

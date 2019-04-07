@@ -62,7 +62,7 @@ include "layout/head.php" ?>
                                 <td>  <form action="proses/pendidikProses.php" method="GET">
                                         <a href="pendidik_edit.php?nik=<?php  echo $subjek->nik; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> </a>
                                            <input hidden name="nik" value="<?php echo $subjek->nik;  ?>">
-                                           <button href="" class="btn btn-danger" name="pendidik_delete" onclick="return confirm('Apakah kamu yakin menghapus pendidik ini')"> <i class="glyphicon glyphicon-trash"></i>
+                                           <button href="" class="btn btn-danger" name="pendidik_delete" onclick="return confirm('Apakah kamu yakin menghapus pendidik ini?')"> <i class="glyphicon glyphicon-trash"></i>
                                        </form>
                                 </td>
                             </tr>

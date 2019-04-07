@@ -34,7 +34,7 @@ function runQuery($konek,$sql){
             }
             else {
                 if ($state=="23505") { // unique_violation
-                    echo "<script>alert('Kode rombel telah ada!');history.go(-1);</script>";
+                    echo "<script>alert('Kode kelompok telah ada!');history.go(-1);</script>";
                 }else{
                     $m = pg_last_error($konek);
 //                    echo $m;

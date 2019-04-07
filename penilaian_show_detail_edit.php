@@ -254,7 +254,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                <input type="submit" class="btn btn-success" name="nilai_edit" value="Ubah">
+                <input type="submit" class="btn btn-success" name="nilai_edit" value="Update">
             </div>
             </form>
         </div>

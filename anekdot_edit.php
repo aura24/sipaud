@@ -43,7 +43,7 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
                 <input hidden name="id_detail_penilaian" value="<?php echo $_GET['id_detail_penilaian'] ?>">
-                <input type="submit" class="btn btn-success" name="anekdot_edit" value="UBAH">
+                <input type="submit" class="btn btn-success" name="anekdot_edit" value="Update">
             </div>
             </form>
         </div>

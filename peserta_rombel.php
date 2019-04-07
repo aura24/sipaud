@@ -35,7 +35,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <label for="id_peserta_rombel">Kode Peserta :</label>
-                                <input type="text" id="id_peserta_rombel" name="id_peserta_rombel" required="required" class="form-control col-md-7 col-xs-12">
+                                <input type="number" id="id_peserta_rombel" name="id_peserta_rombel" required="required" class="form-control col-md-7 col-xs-12">
                             </div>
                             <div class="col-md-6">
                                 <label for="no_induk_peserta_didik">No Induk Peserta Didik :</label>

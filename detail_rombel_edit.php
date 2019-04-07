@@ -51,8 +51,7 @@ include "connect_db.php";
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="namar">Nama Rombel <span
-                                            class="required">*</span>
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="namar">Nama Rombel <span class="required">*</span>
                                 </label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
 
@@ -76,7 +75,7 @@ include "connect_db.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <select name="tahun_ajaran" class="form-control">
                                         <?php while ($ta = pg_fetch_object($tahun_ajaran)) {
-                                            if ($ta->tahun_ajaran_id == $data->id_tahun_ajaran) {
+                                            if ($ta->id_tahun_ajaran == $data->id_tahun_ajaran) {
                                                 ?>
                                                 <option value="<?php echo $ta->id_tahun_ajaran ?>"
                                                         selected><?php echo $ta->tahun_ajaran ?></option>
@@ -129,8 +128,8 @@ include "connect_db.php";
                                     </select>
                                 </div>
                             </div>
-                                <a   class="btn btn-default" href="detail_rombel_table.php">Kembali</a>
-                                <input type="submit" class="btn btn-success"  name="detail_rombel_edit" value="Simpan Perubahan">
+                                <a   class="btn btn-primary" href="detail_rombel_table.php">Batal</a>
+                                <input type="submit" class="btn btn-success"  name="detail_rombel_edit" value="Update">
                             <?php } ?>
                         </form>
                         <!---------------------------Content------------------------------------->

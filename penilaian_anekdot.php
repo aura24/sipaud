@@ -26,7 +26,7 @@
                 <div class="col-md-12">
                     <div class="x_panel">
                         <div class="x_title">
-                            <h3>Penilaian Peserta Rombel</h3>
+                            <h3>Catatan Anekdot</h3>
                         </div>
                         <table class="table table-striped">
                             <?php
@@ -41,8 +41,8 @@
                                 </tr>
                             <?php } ?>
                         </table>
-
-                         <a class="btn btn-default" onclick=" window.history.back();"><li class="fa fa-backward"></li> Kembali</a>
+<!-- 
+                         <a class="btn btn-default" onclick=" window.history.back();"><li class="fa fa-backward"></li> Kembali</a> -->
                         <a class="btn btn-primary" data-toggle="modal" data-target="#addAnekdot"><li class="fa fa-user-plus"></li> Catatan Anekdot </a>
 
 
@@ -53,11 +53,11 @@
 
                         <table class="table table-bordered">
                             <thead>
-                                <th>Waktu</th>
-                                <th>Tempat</th>
-                                <th>Peristiwa</th>
-                                <th>Indikator yang muncul</th>
-                                <th>Aksi</th>
+                                <th style="width: 10%">Waktu</th>
+                                <th style="width: 10%">Tempat</th>
+                                <th style="width: 35%">Peristiwa</th>
+                                <th style="width: 35%">Indikator yang muncul</th>
+                                <th style="width: 10%">Aksi</th>
                             </thead>
                             <tbody>
                          <?php
@@ -70,15 +70,16 @@
                                     <td><?php echo $subjek->tempat ?></td>
                                     <td><?php echo $subjek->peristiwa ?></td>
                                     <td>
-                                        <a class="btn btn-primary btn-xs pull-right" data-toggle="modal" data-target="#addIndiMuncul"><li class="fa fa-plus"></li> </a>
+                                        <input hidden name="kode_anekdot" value="<?php echo $subjek->kode_anekdot ?>">
+                                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addIndiMuncul-<?php echo $subjek->kode_anekdot; ?>"><li class="fa fa-plus"></li> </a>
                                         <?php include 'indikator_muncul_add.php'; ?>
                                         <table class="table table-striped">
                                             <?php
                                             while($indikator = pg_fetch_object($indiMuncul)){?>
                                             <tr>
-                                                <td><?php echo $indikator->kode_tpp ?></td>
-                                                <td><?php echo $indikator->indikator ?></td>
-                                                <td>
+                                                <td style="width: 10%"><?php echo $indikator->kode_tpp ?></td>
+                                                <td style="width: 70%"><?php echo $indikator->indikator ?></td>
+                                                <td style="width: 10%">
                                                     <div class="btn-group">
                                                         <form action="proses/anekdotProses.php" method="POST">
                                                             <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian;  ?>">
@@ -96,9 +97,9 @@
                                         <div class="btn-group">
                                         <form action="proses/anekdotProses.php" method="POST">
                                             <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian;  ?>">
+                                            <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editAnekdot-<?php echo $subjek->kode_anekdot; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                             <input hidden name="kode_anekdot" value="<?php echo $subjek->kode_anekdot;  ?>">
                                             <button class="btn btn-danger btn-xs" name="anekdot_delete" onclick="return confirm('Apakah kamu yakin menghapus catatan anekdot ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
-                                            <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editAnekdot-<?php echo $subjek->kode_anekdot; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                         </form>
                                         </div>
                                           <?php include 'anekdot_edit.php'; ?>
@@ -123,4 +124,4 @@
 <?php include "layout/script.php";?>
 
 </body>
-</html>
+</html> 

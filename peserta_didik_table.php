@@ -64,7 +64,7 @@
                                 <td>  <form action="proses/pesertaDidikProses.php" method="GET">
                                         <a href="peserta_didik_edit.php?no_induk=<?php  echo $subjek->no_induk; ?>" class="btn btn-warning"><i class="glyphicon glyphicon-edit"></i> </a>
                                            <input hidden name="no_induk" value="<?php echo $subjek->no_induk;  ?>">
-                                           <button href="" class="btn btn-danger" name="peserta_didik_delete" onclick="return confirm('Apakah kamu yakin menghapus peserta didik ini')"> <i class="glyphicon glyphicon-trash"></i>
+                                           <button href="" class="btn btn-danger" name="peserta_didik_delete" onclick="return confirm('Apakah kamu yakin menghapus peserta didik ini?')"> <i class="glyphicon glyphicon-trash"></i>
                                        </form>
                                 </td>
                             </tr>

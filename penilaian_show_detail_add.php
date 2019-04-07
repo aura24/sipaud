@@ -21,7 +21,7 @@
 
                            $sql_peserta = "select * FROM peserta_rombel 
                                            JOIN peserta_didik ON peserta_rombel.no_induk_peserta_didik  =peserta_didik.no_induk 
-                                            WHERE id_detail_rombel = '".$id_detail_rombel."' AND  peserta_rombel.id_peserta_rombel NOT IN ( Select id_peserta_rombel FROM detail_penilaian where id_detail_rombel = '".$id_detail_rombel."')";
+                                            WHERE id_detail_rombel = '".$id_detail_rombel."' AND  peserta_rombel.id_peserta_rombel NOT IN ( Select detail_penilaian.id_peserta_rombel FROM detail_penilaian where id_penilaian = '".$_GET['id']."')";
                            $pesertas = pg_query($konek,$sql_peserta);
                            while($subjek = pg_fetch_object($pesertas)){
                                ?>
@@ -107,7 +107,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
-                <input type="submit" class="btn btn-success" name="nilai_add" value="Tambah">
+                <input type="submit" class="btn btn-success" name="nilai_add" value="Submit">
             </div>
             </form>
         </div>

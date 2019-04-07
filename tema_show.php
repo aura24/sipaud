@@ -65,8 +65,7 @@ include "connect_db.php";
 
                                                                         <!-- Modal Header -->
                                                                         <div class="modal-header">
-                                                                            <h4 class="modal-title"><?php echo $sub->nama?></h4>
-                                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                            <h4 class="modal-title">Edit Sub Tema - <?php echo $sub->nama?></h4>
                                                                         </div>
                                                                         <form action="proses/temaProses.php" method="POST">
                                                                             <!-- Modal body -->
@@ -74,7 +73,7 @@ include "connect_db.php";
                                                                                 <div class="form-group">
                                                                                     <label class="control-label" for="id_sub_tema">ID sub Tema <span class="required">*</span>
                                                                                     </label>
-                                                                                    <input class="form-control" name="id_sub_tema" value="<?php echo $sub->id_sub_tema ?>">
+                                                                                    <input type="number" class="form-control" name="id_sub_tema" value="<?php echo $sub->id_sub_tema ?>">
                                                                                 </div>
                                                                                 <div class="form-group">
                                                                                     <label class="control-label" for="nama">Nama sub Tema <span class="required">*</span>
