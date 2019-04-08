@@ -32,7 +32,7 @@
                                             JOIN detail_rombel on detail_rombel.id_detail_rombel = penilaian.id_detail_rombel 
                                             JOIN rombel on rombel.id_rombel = detail_rombel.id_rombel 
                                             JOIN pendidik ON pendidik.nik = detail_rombel.pendidik_nik
-                                            where id_penilaian = ".$_GET['id'];
+                                            where id_penilaian = ".$_GET['id_penilaian'];
 
                             $penilaian = pg_query($konek, $sql_nilai);
                             while($data = pg_fetch_object($penilaian)){?>
@@ -62,12 +62,13 @@
                                     $peserta = pg_query($konek,$sql_peserta);
                                     ?>
                                     <td>Jumlah Peserta Didik</td>
-                                    <td>: <?php echo count($peserta) +1?></td>
+                                    <td>: <?php echo $_GET['jum'] ?></td>
                                 </tr>
                             <?php
 
                                 $id_detail_rombel = $data->id_detail_rombel;
                                 $id_sub=$data->id;
+
                             } ?>
                             </tbody>
                         </table>
@@ -101,7 +102,7 @@
                         <div class="x_title">
                             <h3>Penilaian Peserta Rombel</h3>
                         </div>
-                        <input hidden name="id_detail_penilaian" value="<?php echo $_GET['id'] ?>">
+                        <input hidden name="id_detail_penilaian" value="<?php echo $_GET['id_penilaian'] ?>">
                         <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#addPenilaianDetail"><li class="fa fa-user-plus"></li> Penilaian </a>
                         <?php include 'penilaian_show_detail_add.php'; ?>
 
@@ -129,7 +130,7 @@
                             $queryPR ="SELECT * FROM detail_penilaian 
                                         JOIN peserta_rombel ON peserta_rombel.id_peserta_rombel = detail_penilaian.id_peserta_rombel
                                         JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik 
-                                        where id_detail_rombel = '".$id_detail_rombel."' AND id_penilaian = ".$_GET['id'];
+                                        where id_detail_rombel = '".$_GET['id_detail']."' AND id_penilaian = ".$_GET['id_penilaian'];
                             $peserta = pg_query($konek, $queryPR);
                                 while($subjek = pg_fetch_object($peserta)){?>
                                     <tr>
@@ -144,7 +145,7 @@
                                         <td class="text-center">
                                             <form method="POST" action="proses/penilaianDetailProses.php">
                                                 <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian?>">
-                                                <input hidden name="id_penilaian" value="<?php echo $_GET['id'] ?>">
+                                                <input hidden name="id_penilaian" value="<?php echo $_GET['id_penilaian'] ?>">
                                                 <input hidden name="id_detail_rombel" value="<?php echo $subjek->id_detail_rombel ?>">
                                                 <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editPenilaianDetail-<?php echo $subjek->id_detail_penilaian; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                                 <button type="submit" class="btn btn-danger btn-xs" name="nilai_delete" href="penilaian_anekdot.php?id=<?php echo $n->id_detail_penilaian ?>"><i class="glyphicon glyphicon-trash"></i> </button>

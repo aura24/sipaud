@@ -129,6 +129,7 @@ include "connect_db.php";
                                 </div>
                             </div>
                                 <a   class="btn btn-primary" href="detail_rombel_table.php">Batal</a>
+                                <input hidden name="id_detail_rombel_awal" value="<?php echo $data->id_detail_rombel ?>">
                                 <input type="submit" class="btn btn-success"  name="detail_rombel_edit" value="Update">
                             <?php } ?>
                         </form>

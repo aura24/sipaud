@@ -29,7 +29,7 @@
 
                             $queryPR ="SELECT * FROM peserta_rombel JOIN peserta_didik on peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik where id_detail_rombel = '".$_GET['id']."'";
                             $peserta = pg_query($konek, $queryPR);
-
+                            $count = pg_num_rows($peserta);
 
                             while($subjek = pg_fetch_object($detail_rombel)){?>
                                 <tr>
@@ -50,7 +50,7 @@
                                 </tr>
                                 <tr>
                                     <td>Jumlah Peserta Didik :</td>
-                                    <td> <label class="label label-info"><?php echo count($peserta)+1 ?></label></td>
+                                    <td> <label class="label label-info"><?php echo $count ?></label></td>
                                 </tr>
                             <?php } ?>
                             </tbody>
@@ -73,6 +73,8 @@
                                 <td><?php echo $subjek->nama_lengkap?></td>
                             </tr>
                             <?php } ?>
+
+
                         </table>
                     </div>
                 </div>
@@ -108,7 +110,7 @@
                                             <input hidden name="id_penilaian" value="<?php echo $data->id_penilaian;  ?>">
                                             <input hidden name="id_sub_tema" value="<?php echo $data->id_sub_tema ?>">
                                             <button class="btn btn-danger btn-xs" name="penilaian_show_delete" onclick="return confirm('Apakah kamu yakin menghapus aktivitas ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
-                                            <a class="btn btn-info btn-xs" href="penilaian_show_detail.php?id=<?php echo $data->id_penilaian ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a>
+                                            <a class="btn btn-info btn-xs" href="penilaian_show_detail.php?id_penilaian=<?php echo $data->id_penilaian ?>&id_detail=<?php echo $data->id_detail_rombel ?>&jum=<?php echo $count ?>"> <i class="fa fa-edit"></i> Cek Penilaian</a>
                                         </form>
                                     </td>
                                 </tr>

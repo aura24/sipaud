@@ -21,7 +21,8 @@
                               JOIN peserta_didik ON peserta_didik.no_induk = peserta_rombel.no_induk_peserta_didik
                               where id_detail_penilaian = ".$_GET['id_detail_penilaian'];
                     $peserta = pg_query($konek, $querydetail);
-                 ?>
+
+                   ?>
 
                 <div class="col-md-12">
                     <div class="x_panel">
@@ -30,7 +31,9 @@
                         </div>
                         <table class="table table-striped">
                             <?php
-                            while($data = pg_fetch_object($peserta)){?>
+                            while($data = pg_fetch_object($peserta)){
+
+                              ?>
                                 <tr>
                                     <td width="10%">Nama </td>
                                     <td>: <?php echo $data->peserta_didik ?></td>
@@ -49,6 +52,7 @@
                         <?php
                         $queryAnekdot ="SELECT * FROM catatan_anekdot where id_detail_penilaian = ".$_GET['id_detail_penilaian'];
                         $anekdot = pg_query($konek, $queryAnekdot);
+
                         ?>
 
                         <table class="table table-bordered">
