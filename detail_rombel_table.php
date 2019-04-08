@@ -115,7 +115,7 @@ include "layout/head.php" ?>
                                                    <a   class="btn btn-warning btn-xs" href="detail_rombel_edit.php?id=<?php echo $data->id_detail_rombel?>"><i class="glyphicon glyphicon-edit"></i> </a>
                                                     <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel;  ?>">
                                                     <button class="btn btn-danger btn-xs" name="detail_rombel_delete" onclick="return confirm('Apakah kamu yakin menghapus rombel ini?')"> <i class="glyphicon glyphicon-trash"></i></button>
-                                                    <a   class="btn btn-info btn-xs" href="peserta_rombel.php?id=<?php echo $data->id_detail_rombel?>"><i class="fa fa-eye"></i> Peserta Rombel</a>
+                                                    <a   class="btn btn-info btn-xs" href="peserta_rombel.php?id=<?php echo $data->id_detail_rombel?>&ta=<?php echo $data->id_tahun_ajaran?>&semester=<?php echo $data->semester ?> "><i class="fa fa-eye"></i> Peserta Rombel</a>
                                                     <input hidden name="id_detail_rombel" value="<?php echo $data->id_detail_rombel;  ?>">
                                                     <!-- <a href="peserta_rombel.php" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i> Peserta Rombel </a></td> -->
                                                 </form>

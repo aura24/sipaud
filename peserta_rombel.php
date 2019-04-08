@@ -46,6 +46,9 @@
                                 </select>
                             </div>
                             <input hidden name="id_detail_rombel" value="<?php echo $_GET['id'] ?>">
+                            <input hidden name="id_tahun_ajaran" value="<?php echo $_GET['ta'] ?>">
+                            <input hidden name="semester" value="<?php echo $_GET['semester'] ?>">
+
                             <div class="col-md-6">
                                 <br>
                                 <input type="submit" class="btn btn-primary" name="peserta_rombel_add" value="Tambah">

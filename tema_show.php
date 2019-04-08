@@ -34,7 +34,35 @@ include "connect_db.php";
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                         <div class="row">
-                            <div class="col-md-6">
+
+                            <div class="col-md-12">
+                                <div class="x_panel">
+                                    <div class="x_title">
+                                        <h2>Tambah Sub Tema</h2>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="x_content">
+                                        <form action="proses/temaProses.php" method="POST">
+                                            <div class="form-group col-md-6">
+                                                <label class="control-label" for="id_sub_tema">ID sub Tema <span class="required">*</span>
+                                                </label>
+                                                <input class="form-control" name="id_sub_tema">
+                                            </div>
+                                            <div class="form-group col-md-6">
+                                                <label class="control-label" for="nama">Nama sub Tema <span class="required">*</span>
+                                                </label>
+                                                <input class="form-control" name="nama">
+                                            </div>
+                                            <div class="pull-right">
+                                                <input hidden name="tema_id" value="<?php echo $_GET['id'] ?>">
+                                                <button type="submit" class="btn btn-success" name="sub_tema_add">Tambah</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
                                 <div class="x_panel">
                                     <div class="x_title">
                                         <h2>Sub Tema</h2>
@@ -43,6 +71,12 @@ include "connect_db.php";
                                         <div class="x_content">
                                             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/temaProses.php" method="POST">
                                                 <table class="table table-bordered">
+                                                    <thead>
+                                                        <td>No</td>
+                                                        <td>Nama Sub Tema</td>
+                                                        <td>Indikator</td>
+                                                        <td>aksi</td>
+                                                    </thead>
                                                     <?php
                                                         $query_sub = "Select * FROM sub_tema where tema_id =".$_GET['id'];
                                                         $sub_tema =  pg_query($konek, $query_sub);
@@ -51,13 +85,39 @@ include "connect_db.php";
                                                                 <td width="8%"><?php echo ++$n; ?></td>
                                                                 <td><?php echo $sub->nama ?></td>
                                                                 <td>
+                                                                    <div class="pull-right">
+                                                                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#addDetail-<?php echo $sub->id_sub_tema?>"><i class="fa fa-plus"></i> Indikator</a>
+                                                                        <a class="btn btn-danger btn-xs" data-toggle="modal" data-target="#deleteDetail-<?php echo $sub->id_sub_tema?>"><i class="fa fa-minus"></i> Indikator</a>
+
+                                                                    </div>
+                                                                    <?php
+                                                                    $queryIndi = "Select * FROM indikator_detail 
+                                                                                      JOIN indikator ON indikator.kode_indikator = indikator_detail.kode_indikator
+                                                                                      WHERE id_sub_tema = '".$sub->id_sub_tema."'";
+                                                                    $indikatorSub = pg_query($konek,$queryIndi);
+
+                                                                    while($indiSub = pg_fetch_object($indikatorSub)){
+                                                                        ?>
+                                                                    <li><?php echo $indiSub->nama ?></li>
+                                                                        <?php
+                                                                    }
+                                                                    ?>
+
+
+                                                                </td>
+                                                                <td>
+
                                                                     <form action="proses/temaProses.php" method="POST">
-                                                                        <a class="btn btn-warning" data-toggle="modal" data-target="#edit-<?php echo  $sub->id_sub_tema ?>"><i class="glyphicon glyphicon-edit"> </i></a>
+
+                                                                        <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#edit-<?php echo  $sub->id_sub_tema ?>"><i class="glyphicon glyphicon-edit"> </i></a>
                                                                         <input hidden name="id_sub_tema" value="<?php echo $sub->id_sub_tema;  ?>">
                                                                         <input hidden name="id_tema" value="<?php echo $sub->tema_id;  ?>">
-                                                                        <button class="btn btn-danger" name="subtema_delete" onclick="return confirm('Apakah kamu yakin menghapus sub-tema ini?')"> <i class="glyphicon glyphicon-trash"></i>
+                                                                        <button class="btn btn-danger btn-xs" name="subtema_delete" onclick="return confirm('Apakah kamu yakin menghapus sub-tema ini?')"> <i class="glyphicon glyphicon-trash"></i>
                                                                     </form>
                                                                 </td>
+                                                                <?php include 'detail_indikator_add.php' ?>
+                                                                <?php include 'detail_indikator_delete.php' ?>
+
                                                             </tr>
                                                             <div class="modal fade" id="edit-<?php echo  $sub->id_sub_tema ?>">
                                                                 <div class="modal-dialog">
@@ -99,36 +159,12 @@ include "connect_db.php";
                                         </div>
                                     </div>
                                 </div>
-                            <div class="col-md-6">
-                                <div class="x_panel">
-                                    <div class="x_title">
-                                        <h2>Tambah Sub Tema</h2>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                    <div class="x_content">
-                                        <form action="proses/temaProses.php" method="POST">
-                                            <div class="form-group">
-                                                <label class="control-label" for="id_sub_tema">ID sub Tema <span class="required">*</span>
-                                                </label>
-                                                <input class="form-control" name="id_sub_tema">
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="control-label" for="nama">Nama sub Tema <span class="required">*</span>
-                                                </label>
-                                                <input class="form-control" name="nama">
-                                            </div>
-                                            <input hidden name="tema_id" value="<?php echo $_GET['id'] ?>">
-                                            <button type="submit" class="btn btn-success" name="sub_tema_add">Submit</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
+
                         </div>
                         <!---------------------------Content------------------------------------->
                         <!---------------------------Content------------------------------------->
                     </div>
                 </div>
-                <a href="tema_table.php" class="btn btn-default">Kembali</a>
             </div>
         </div>
         <!-- /page content -->
