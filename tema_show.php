@@ -165,6 +165,7 @@ include "connect_db.php";
                         <!---------------------------Content------------------------------------->
                     </div>
                 </div>
+                <a href="tema_table.php" class="btn btn-default">Kembali</a>
             </div>
         </div>
         <!-- /page content -->

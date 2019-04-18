@@ -9,7 +9,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li class="">
-                    <a href="../../index.php" class="user-profile" aria-expanded="false">
+                    <a href="login.php" class="user-profile" aria-expanded="false">
                         <img src="images/img.jpg" alt="">
                         Keluar
                         <span class=" fa fa-angle-down"></span>

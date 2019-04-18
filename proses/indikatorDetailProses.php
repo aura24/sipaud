@@ -11,6 +11,7 @@ if(isset($_POST['indikator_detail_add'])) {
 }
 
 if(isset($_POST['indikator_detail_delete'])) {
+
     $n=0;
     foreach ($_POST['kode_indikator'] as $kode_indikator) {
          $sql = "delete from indikator_detail where id_sub_tema = '".$_POST['id_sub_tema']."' AND kode_indikator ='" . $kode_indikator . "'";
@@ -45,3 +46,4 @@ function runQuery($konek,$sql, $tema_id){
         }
     }
 }
+?>

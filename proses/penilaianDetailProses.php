@@ -13,7 +13,7 @@ if(isset($_POST['nilai_add'])) {
           sosial_emosional,
           seni)
             values ('" . $_POST['id_penilaian'].$_POST['id_peserta_rombel'] . "','" . $_POST['id_penilaian'] . "','" . $_POST['id_peserta_rombel'] . "','" . $_POST['agama_moral'] . "','" . $_POST['fisik_motorik'] . "','" . $_POST['kognitif'] . "','" . $_POST['bahasa'] . "','" . $_POST['sosial_emosional'] . "','" . $_POST['seni'] . "')";
-    runQuery($konek, $sql);
+    runQuery($konek, $sql,$_POST['id_penilaian'],$_POST['id_detail'],$_POST['jum']);
 }
 
 if(isset($_POST['nilai_edit'])) {
@@ -26,26 +26,50 @@ if(isset($_POST['nilai_edit'])) {
           bahasa = '" . $_POST['bahasa'] . "',
           sosial_emosional = '" . $_POST['sosial_emosional'] . "',
           seni = '" . $_POST['seni'] . "' where id_detail_penilaian = '".$_POST['id_detail_penilaian']."'";
-    runQuery($konek, $sql);
+    runQuery($konek, $sql,$_POST['id_penilaian'],$_POST['id_detail'],$_POST['jum']);
 }
 
 if(isset($_POST['nilai_delete'])){
     $sql="DELETE FROM detail_penilaian WHERE id_detail_penilaian = ".$_POST['id_detail_penilaian'];
     if (pg_query($konek, $sql)) {
-        header("Location: ../penilaian_show_detail.php?id=".$_POST['id_penilaian']);
+          header("Location: ../penilaian_show_detail.php?id_penilaian=".$$_POST['id_penilaian']."&id_detail=".$_POST['id_detail']."&jum=".$_POST['jum']);
     } else {
         echo pg_last_error($konek);
     }
 
 }
 
-function runQuery($konek,$sql){
+function runQuery1($konek,$sql){
     if (pg_send_query($konek, $sql)) {
         $res=pg_get_result($konek);
         if ($res) {
             $state = pg_result_error_field($res, PGSQL_DIAG_SQLSTATE);
             if ($state==0) {
-                header("Location: ../penilaian_show_detail.php?id=".$_POST['id_penilaian']);
+               echo "<script>alert('Data Berhasil di tambah');history.go(-1);</script>";
+            }
+            else {
+                echo $state;
+                if ($state=="23505") { // unique_violation
+                    echo "<script>alert('Kode telah ada!');history.go(-1);</script>";
+                }else{
+                    echo pg_last_error($konek);
+//                    echo "<script>alert('Gagal di tambahkan!');history.go(-1);</script>";;
+                }
+            }
+        }
+    }
+}
+
+
+function runQuery($konek,$sql,$id_penilaian,$id_detail,$jum){
+    if (pg_send_query($konek, $sql)) {
+        $res=pg_get_result($konek);
+        if ($res) {
+            $state = pg_result_error_field($res, PGSQL_DIAG_SQLSTATE);
+            if ($state==0) {
+              header("Location: ../penilaian_show_detail.php?id_penilaian=".$id_penilaian."&id_detail=".$id_detail."&jum=".$jum);
+
+               // echo "<script>alert('Data Berhasil di tambah');history.go(-1);</script>";
             }
             else {
                 echo $state;

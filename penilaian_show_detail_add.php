@@ -10,7 +10,7 @@
 
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/penilaianDetailProses.php" method="POST">
             <div class="modal-body">
-                <input hidden name="id_penilaian" value="<?php echo $_GET['id']?>">
+                <input hidden name="id_penilaian" value="<?php echo $_GET["id_penilaian"]?>">
 
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_peserta_rombel">Peserta Didik <span class="required">*</span>
@@ -21,10 +21,14 @@
 
                            $sql_peserta = "select * FROM peserta_rombel 
                                            JOIN peserta_didik ON peserta_rombel.no_induk_peserta_didik  =peserta_didik.no_induk 
-                                            WHERE id_detail_rombel = '".$id_detail_rombel."' AND  peserta_rombel.id_peserta_rombel NOT IN ( Select detail_penilaian.id_peserta_rombel FROM detail_penilaian where id_penilaian = '".$_GET['id']."')";
+                                            WHERE id_detail_rombel = '".$id_detail_rombel."' AND  peserta_rombel.id_peserta_rombel NOT IN ( Select detail_penilaian.id_peserta_rombel FROM detail_penilaian where id_penilaian = ".$_GET['id_penilaian'].")";
                            $pesertas = pg_query($konek,$sql_peserta);
+
                            while($subjek = pg_fetch_object($pesertas)){
+                            print_r($subjek);
+                
                                ?>
+
                            <option value="<?php echo $subjek->id_peserta_rombel ?>"><?php echo $subjek->nama_lengkap ?></option>
                           <?php }
                            ?>
@@ -106,6 +110,9 @@
                 </div>
             </div>
             <div class="modal-footer">
+                <input hidden name="id_penilaian" value="<?php echo $_GET['id_penilaian']?>">
+                <input hidden name="id_detail" value="<?php echo $_GET['id_detail']?>">
+                <input hidden name="jum" value="<?php echo $_GET['jum']?>">
                 <button type="button" class="btn btn-primary" data-dismiss="modal">Batal</button>
                 <input type="submit" class="btn btn-success" name="nilai_add" value="Submit">
             </div>

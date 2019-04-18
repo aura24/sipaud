@@ -68,7 +68,7 @@
                             while($subjek = pg_fetch_object($anekdot)){
                                 $sqlIndikator = "Select indikator_tpp.nama as indikator, indikator_tpp.kode_tpp as kode_tpp From indikator_yg_muncul JOIN indikator_tpp ON indikator_tpp.kode_tpp = indikator_yg_muncul.kode_tpp where kode_anekdot = '".$subjek->kode_anekdot."'";
                                 $indiMuncul = pg_query($konek, $sqlIndikator);
-                                $n = count($indiMuncul)?>
+                                // $n = count($indiMuncul)?> 
                                 <tr>
                                     <td><?php echo $subjek->waktu ?></td>
                                     <td><?php echo $subjek->tempat ?></td>

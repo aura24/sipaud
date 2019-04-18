@@ -147,6 +147,9 @@
                                                 <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian?>">
                                                 <input hidden name="id_penilaian" value="<?php echo $_GET['id_penilaian'] ?>">
                                                 <input hidden name="id_detail_rombel" value="<?php echo $subjek->id_detail_rombel ?>">
+                                                
+                                                <input hidden name="id_detail" value="<?php $_GET['id_detail']?>">
+                                                <input hidden name="jum" value="<?php $_GET['jum']?>">
                                                 <a class="btn btn-warning btn-xs" data-toggle="modal" data-target="#editPenilaianDetail-<?php echo $subjek->id_detail_penilaian; ?>"><li class="glyphicon glyphicon-edit"></li> </a>
                                                 <button type="submit" class="btn btn-danger btn-xs" name="nilai_delete" href="penilaian_anekdot.php?id=<?php echo $n->id_detail_penilaian ?>"><i class="glyphicon glyphicon-trash"></i> </button>
                                             </form>

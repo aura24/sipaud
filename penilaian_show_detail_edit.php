@@ -10,10 +10,13 @@
 
             <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="proses/penilaianDetailProses.php" method="POST">
             <div class="modal-body">
-                <input hidden name="id_penilaian" value="<?php echo $_GET['id']?>">
+                <!-- <input hidden name="id_penilaian" value="<?php echo $_GET['id']?>"> -->
                 <input hidden name="id_detail_penilaian" value="<?php echo $subjek->id_detail_penilaian ?>">
                 <input hidden name="id_peserta_rombel" value="<?php echo $subjek->id_peserta_rombel?>">
-
+            
+                <input hidden name="id_penilaian" value="<?php echo $_GET['id_penilaian']?>">
+                <input hidden name="id_detail" value="<?php echo $_GET['id_detail']?>">
+                <input hidden name="jum" value="<?php echo $_GET['jum']?>">
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id_peserta_rombel">Peserta Didik <span class="required">*</span>
                     </label>
