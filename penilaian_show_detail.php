@@ -103,6 +103,7 @@
                             <h3>Penilaian Peserta Rombel</h3>
                         </div>
                         <input hidden name="id_detail_penilaian" value="<?php echo $_GET['id_penilaian'] ?>">
+                        <a class="btn btn-warning pull-right" href="penilaian_show_detail_print.php?id_penilaian=<?php echo $_GET['id_penilaian'];?>&id_detail=<?php echo $_GET['id_detail'] ?>&jum=<?php echo $_GET['jum']?>" target="_blank"><li class="fa fa-print"></li> Print </a>
                         <a class="btn btn-primary pull-right" data-toggle="modal" data-target="#addPenilaianDetail"><li class="fa fa-user-plus"></li> Penilaian </a>
                         <?php include 'penilaian_show_detail_add.php'; ?>
 
@@ -123,6 +124,7 @@
                                     <td style="width: 10%" class="text-center">Sosial Emosional</td>
                                     <td style="width: 10%" class="text-center">Seni</td>
                                 </tr>
+
                             </thead>
                             <tbody>
                             
