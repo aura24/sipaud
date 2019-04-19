@@ -46,6 +46,8 @@
                         </table>
 <!-- 
                          <a class="btn btn-default" onclick=" window.history.back();"><li class="fa fa-backward"></li> Kembali</a> -->
+                        <a class="btn btn-warning pull-right" href="penilaian_anekdot_print.php?id_detail_penilaian=<?php echo $_GET['id_detail_penilaian'];?>" target="_blank"><li class="fa fa-print"></li> Print </a>
+
                         <a class="btn btn-primary" data-toggle="modal" data-target="#addAnekdot"><li class="fa fa-user-plus"></li> Catatan Anekdot </a>
 
 
