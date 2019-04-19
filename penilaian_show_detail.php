@@ -157,7 +157,10 @@
                                             </form>
                                                 <?php include 'penilaian_show_detail_edit.php'; ?>
                                         </td>
-                                        <td class="text-center"><a class="btn btn-info btn-xs" href="penilaian_anekdot.php?id_detail_penilaian=<?php echo $subjek->id_detail_penilaian ?>">Lihat </a></td>
+                                        <td class="text-center">
+                                            <a class="btn btn-info btn-xs" href="penilaian_anekdot.php?id_detail_penilaian=<?php echo $subjek->id_detail_penilaian ?>">Lihat </a>
+                                            <a class="btn btn-primary btn-xs" href="penilaian_anekdot_hari_print.php?id_penilaian=<?php echo $_GET['id_penilaian'];?>&id_detail=<?php echo $_GET['id_detail'] ?>&jum=<?php echo $_GET['jum']?>" target="_blank"><li class="fa fa-print"></li></a>
+                                        </td>
                                     </tr>
                             <?php } ?>
                             </tbody>
